@@ -1,0 +1,4 @@
+player 4 draws a 8
+player 4 draws a 5
+player 4 draws a 7
+player 4 draws a 2

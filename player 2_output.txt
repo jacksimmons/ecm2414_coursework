@@ -1,0 +1,4 @@
+player 2 draws a 2
+player 2 draws a 6
+player 2 draws a 5
+player 2 draws a 5

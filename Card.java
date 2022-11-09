@@ -5,4 +5,9 @@ public class Card {
     {
         value = cardValue;
     }
+
+    public int getValue()
+    {
+        return value;
+    }
 }
