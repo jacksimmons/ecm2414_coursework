@@ -1,10 +1,8 @@
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -41,7 +39,7 @@ public class PackGenerator {
         {
             Random random = new Random();
             Card card = cards.get(random.nextInt(cards.size()));
-            Files.writeString(file, Integer.toString(card.value) + "\n", StandardOpenOption.APPEND);
+            Files.writeString(file, Integer.toString(card.getValue()) + "\n", StandardOpenOption.APPEND);
             cards.remove(card);
         }
     }

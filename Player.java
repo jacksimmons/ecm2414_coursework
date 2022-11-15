@@ -3,14 +3,18 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.nio.file.*;
 
-public class Player {
-    ArrayList<Card> hand = new ArrayList<>();
-    int id;
-    String name;
-    Path outputFile;
+public class Player implements Runnable {
+    /* A class used as a thread in CardGame.
+     * This class handles any player input and card dealing after the initial hands are dealt.
+     */
+    private ArrayList<Card> hand = new ArrayList<>();
+    private int id;
+    private String name;
+    private Path outputFile;
+    private ArrayList<Player> otherPlayers = new ArrayList<>();
 
-    CardDeck left;
-    CardDeck right;
+    private CardDeck left;
+    private CardDeck right;
 
     public Player(int playerId, CardDeck leftDeck, CardDeck rightDeck)
     {
@@ -18,6 +22,14 @@ public class Player {
         name = "player " + Integer.toString(playerId);
         left = leftDeck;
         right = rightDeck;
+    }
+
+    public void run()
+    {
+        while (!Thread.currentThread().isInterrupted())
+        {
+            takeTurn();
+        }
     }
 
     public int getId()
@@ -30,26 +42,68 @@ public class Player {
         return name;
     }
 
-    public void drawCard(Card drawnCard)
+    public synchronized void setOtherPlayers(ArrayList<Player> players)
+    {
+        otherPlayers = players;
+    }
+
+    private synchronized void takeTurn()
+    // An atomic action - before this method, player has 4 cards;
+    // after this method, they still have 4.
+    {
+        //System.out.println(getName() + " takes a turn.");
+
+        Card leftCard = left.popCard();
+        Card rightCard = discardCard();
+        right.addCard(rightCard);
+        drawCard(leftCard);
+    }
+
+    public synchronized void drawCard(Card drawnCard)
     {
         if (hand.size() <= 3)
         {
             hand.add(drawnCard);
-            outputLine(getName() + " draws a " + Integer.toString(drawnCard.value));
+            outputLine(getName() + " draws a " + Integer.toString(drawnCard.getValue()));
         }
     }
 
-    public void discardCard(Card discardedCard)
+    // Remove the 4th card.
+    // If the 4th card is preferred, go down to the 3rd, etc...
+    // If we get through all the cards, then we can say the player has won.
+    public synchronized Card discardCard()
     {
-        
+        Card card = null;
+        boolean cardDiscarded = false;
+        for (int i=3; i >= 0; i--)
+        {
+            if (hand.get(i).getValue() == getId())
+            {
+                continue;
+            }
+            else
+            {
+                cardDiscarded = true;
+                card = hand.get(i);
+                hand.remove(i);
+                break;
+            }
+        }
+
+        if (!cardDiscarded)
+        {
+            handleWin();
+        }
+
+        return card;
     }
 
-    public ArrayList<Card> getHand()
+    public synchronized ArrayList<Card> getHand()
     {
         return hand;
     }
 
-    public ArrayList<Integer> getHandValues()
+    public synchronized ArrayList<Integer> getHandValues()
     {
         ArrayList<Integer> handValues = new ArrayList<>();
         for (int i=0; i < hand.size(); i++)
@@ -59,12 +113,12 @@ public class Player {
         return handValues;
     }
 
-    public void setOutputFile(Path file)
+    public synchronized void setOutputFile(Path file)
     {
         outputFile = file;
     }
 
-    public void outputLine(String line)
+    public synchronized void outputLine(String line)
     {
         try {
             Files.writeString(outputFile, line + "\n", StandardOpenOption.APPEND);
@@ -74,7 +128,7 @@ public class Player {
         }
     }
 
-    public void informPlayers(ArrayList<Player> players)
+    public synchronized void informPlayers(ArrayList<Player> players)
     {
         for (int i=0; i < players.size(); i++)
         {
@@ -84,5 +138,12 @@ public class Player {
                 player.outputLine(getName() + " has informed " + player.getName() + " that " + getName() + " has won");
             }
         }
+    }
+
+    public synchronized void handleWin()
+    {
+        System.out.println(getName() + " wins");
+        outputLine(getName() + " wins");
+        informPlayers(otherPlayers);
     }
 }

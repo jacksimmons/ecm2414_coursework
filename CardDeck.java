@@ -16,12 +16,18 @@ public class CardDeck {
         return name;
     }
 
-    public void addCard(Card drawnCard)
+    public synchronized void addCard(Card drawnCard)
     {
-        deck.add(drawnCard);
+        deck.add(0, drawnCard);
     }
 
-    public ArrayList<Integer> getDeckValues()
+    public synchronized Card popCard()
+    {
+        Card card = deck.remove(deck.size() - 1);
+        return card;
+    } 
+
+    public synchronized ArrayList<Integer> getDeckValues()
     {
         ArrayList<Integer> deckValues = new ArrayList<>();
         for (int i=0; i < deck.size(); i++)

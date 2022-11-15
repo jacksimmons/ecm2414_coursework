@@ -5,11 +5,16 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 
 
 public class CardGame {
-    public static void main(String[] args)
+    /* A class which handles the whole game.
+     * It handles the beginning of the game (dealing to the players and the decks), then runs the Player threads.
+     * The Player threads then continue the game.
+     */
+    public static void main(String[] args) throws InterruptedException
     {
         // Create scanner for input
         Scanner scanner = new Scanner(System.in);
@@ -18,9 +23,17 @@ public class CardGame {
         ArrayList<Card> cards;
         
         while (true) {
-            // Ask for input on number of players        
+            // Ask for input on number of players
             System.out.println("Please enter the number of players:");
-            numPlayers = scanner.nextInt();
+            try {
+                numPlayers = scanner.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println("Invalid number of players.");
+                scanner.next();
+                continue;
+            }
 
             // Ask for input on file location
             System.out.println("Please enter location of the pack to load:");
@@ -41,6 +54,7 @@ public class CardGame {
                 if (numPlayers * 8 != cards.size())
                 {
                     System.out.println("Invalid pack file length.");
+                    scanner.next();
                     continue;
                 }
 
@@ -49,10 +63,10 @@ public class CardGame {
             } catch (IOException e) {
                 System.out.println("Couldn't open pack file.");
                 continue;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid type in pack file.");
             }
         }
+
+        scanner.close();
 
         ArrayList<Player> players = new ArrayList<>();
         ArrayList<CardDeck> decks = new ArrayList<>();
@@ -101,6 +115,11 @@ public class CardGame {
             {
                 System.out.println("Failed to make output file for " + player.getName());
             }
+        }
+
+        for (int i=1; i <= numPlayers; i++)
+        {
+            players.get(i-1).setOtherPlayers(players);
         }
 
         boolean playersDealt = false;
@@ -159,9 +178,7 @@ public class CardGame {
     
                         if (playerHasWon)
                         {
-                            System.out.println(player.getName() + " wins");
-                            player.outputLine(player.getName() + " wins");
-                            player.informPlayers(players);
+                            player.handleWin();
                         }
     
                         System.out.println(player.getName() + " " + player.getHandValues());
@@ -183,12 +200,23 @@ public class CardGame {
             }
         }
 
-        for (int i=0; i < decks.size(); i++)
+        for (CardDeck deck : decks)
         {
-            CardDeck deck = decks.get(i);
             System.out.println(deck.getName() + " " + deck.getDeckValues());
         }
 
-        System.out.println(cards);
+        ArrayList<Thread> threads = new ArrayList<>();
+        for (Player player : players) {
+            Thread thread = new Thread(player);
+            thread.start();
+            threads.add(thread);
+        }
+
+        for (Thread thread : threads)
+        {
+            // Wait for every thread to complete
+            thread.join();
+        }
+
     }
 }
