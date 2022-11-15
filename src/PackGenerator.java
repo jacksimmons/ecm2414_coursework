@@ -42,5 +42,6 @@ public class PackGenerator {
             Files.writeString(file, Integer.toString(card.getValue()) + "\n", StandardOpenOption.APPEND);
             cards.remove(card);
         }
+        System.out.println("hi");
     }
 }

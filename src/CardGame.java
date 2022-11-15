@@ -14,8 +14,7 @@ public class CardGame {
      * It handles the beginning of the game (dealing to the players and the decks), then runs the Player threads.
      * The Player threads then continue the game.
      */
-    public static void main(String[] args) throws InterruptedException
-    {
+    public static void main(String[] args) throws InterruptedException, IOException {
         // Create scanner for input
         Scanner scanner = new Scanner(System.in);
 
@@ -203,6 +202,12 @@ public class CardGame {
         for (CardDeck deck : decks)
         {
             System.out.println(deck.getName() + " " + deck.getDeckValues());
+
+            if (!(numPlayers * 8  == lines.size())) {
+            	throw new IOException();
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid pack file.");
         }
 
         ArrayList<Thread> threads = new ArrayList<>();
