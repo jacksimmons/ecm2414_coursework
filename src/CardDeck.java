@@ -23,8 +23,12 @@ public class CardDeck {
 
     public synchronized Card popCard()
     {
-        Card card = deck.remove(deck.size() - 1);
-        return card;
+        if (deck.size() > 0) {
+            Card card = deck.remove(deck.size() - 1);
+            return card;
+        } else {
+            return null;
+        }
     } 
 
     public synchronized ArrayList<Integer> getDeckValues()

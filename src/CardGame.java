@@ -80,28 +80,15 @@ public class CardGame {
         for (int i=1; i <= numPlayers; i++)
         {
             int playerIndex = i-1;
-            int leftIndex;
-            int rightIndex;
+            int leftNum = i;
+            int rightNum = i + 1;
 
-            if (playerIndex - 1 < 0)
+            if (i == numPlayers)
             {
-                leftIndex = decks.size() - 1;
-            }
-            else 
-            {
-                leftIndex = playerIndex - 1;
+                rightNum = 1 ;
             }
 
-            if (playerIndex + 1 >= players.size())
-            {
-                rightIndex = 0;
-            }
-            else
-            {
-                rightIndex = playerIndex + 1;
-            }
-
-            Player player = new Player(i, decks.get(leftIndex), decks.get(rightIndex));
+            Player player = new Player(i, decks.get(leftNum - 1), decks.get(rightNum - 1));
             players.add(player);
 
             Path path = Paths.get(player.getName() + "_output.txt");
@@ -159,29 +146,13 @@ public class CardGame {
                     for (int i=0; i < numPlayers; i++)
                     {
                         Player player = players.get(i);
-    
-                        ArrayList<Integer> handValues = player.getHandValues();
-                        int firstValue = handValues.get(0);
-    
-                        boolean playerHasWon = false;
-                        for (int j=0; j < 4; j++)
-                        {
-                            if (handValues.get(j) != firstValue)
-                            {
-                                break;
-                            }
-                            else if (j == 3)
-                            {
-                                playerHasWon = true;
-                            }
-                        }
-    
-                        if (playerHasWon)
-                        {
+
+                        if (player.checkHasWon()){
                             player.handleWin();
-                        }
+                        };
     
                         System.out.println(player.getName() + " " + player.getHandValues());
+                        System.out.println(player.getLeft().getName() + " " + player.getRight().getName());
                     }
                     checkedPlayers = true;
                 }
@@ -210,6 +181,12 @@ public class CardGame {
             Thread thread = new Thread(player);
             thread.start();
             threads.add(thread);
+            System.out.println();
+            System.out.println(player.getLeft().getDeckValues() + " " + player.getRight().getDeckValues());
+        }
+
+        for (Player player : players) {
+            player.setThread(threads);
         }
 
         for (Thread thread : threads)

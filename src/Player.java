@@ -15,6 +15,11 @@ public class Player implements Runnable {
 
     private CardDeck left;
     private CardDeck right;
+    private ArrayList<Thread> thread = new ArrayList<>();
+    private boolean isRunning = true;
+    public void setRunning(boolean TorF) {
+        isRunning = TorF; //true of false
+    }
 
     public Player(int playerId, CardDeck leftDeck, CardDeck rightDeck)
     {
@@ -26,10 +31,18 @@ public class Player implements Runnable {
 
     public void run()
     {
+        System.out.println(name + "has started");
         while (!Thread.currentThread().isInterrupted())
         {
-            takeTurn();
+            try {
+                takeTurn();
+                Thread.sleep(100);
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
+        System.out.println(name + " has exited.");
     }
 
     public int getId()
@@ -42,21 +55,61 @@ public class Player implements Runnable {
         return name;
     }
 
+    public CardDeck getLeft() {
+        return left;
+    }
+
+    public CardDeck getRight() {
+        return right;
+    }
+    public ArrayList<Thread> getThread() {
+        return thread;
+    }
+    public void setThread(ArrayList<Thread> newThread) {
+        thread = newThread;
+    }
     public synchronized void setOtherPlayers(ArrayList<Player> players)
     {
         otherPlayers = players;
     }
 
-    private synchronized void takeTurn()
+    public synchronized boolean checkHasWon() {
+
+        ArrayList<Integer> handValues = getHandValues();
+        int firstValue = handValues.get(0);
+
+        boolean playerHasWon = false;
+        for (int j=0; j < 4; j++)
+        {
+            if (handValues.get(j) != firstValue)
+            {
+                break;
+            }
+            else if (j == 3)
+            {
+                playerHasWon = true;
+            }
+        }
+        return playerHasWon;
+    }
+
+    private synchronized void takeTurn() throws InterruptedException
     // An atomic action - before this method, player has 4 cards;
     // after this method, they still have 4.
     {
         //System.out.println(getName() + " takes a turn.");
 
         Card leftCard = left.popCard();
-        Card rightCard = discardCard();
-        right.addCard(rightCard);
-        drawCard(leftCard);
+        if (leftCard != null) {
+            Card rightCard = discardCard();
+            right.addCard(rightCard);
+            drawCard(leftCard);
+            System.out.println(getName() + ": " + getHandValues());
+            if (checkHasWon()){
+                handleWin();
+            };
+        }
+
     }
 
     public synchronized void drawCard(Card drawnCard)
@@ -71,8 +124,7 @@ public class Player implements Runnable {
     // Remove the 4th card.
     // If the 4th card is preferred, go down to the 3rd, etc...
     // If we get through all the cards, then we can say the player has won.
-    public synchronized Card discardCard()
-    {
+    public synchronized Card discardCard() throws InterruptedException {
         Card card = null;
         boolean cardDiscarded = false;
         for (int i=3; i >= 0; i--)
@@ -140,10 +192,12 @@ public class Player implements Runnable {
         }
     }
 
-    public synchronized void handleWin()
-    {
+    public synchronized void handleWin() throws InterruptedException {
         System.out.println(getName() + " wins");
         outputLine(getName() + " wins");
         informPlayers(otherPlayers);
+        for (Thread playerThread : thread) {
+            playerThread.interrupt();
+        }
     }
 }
