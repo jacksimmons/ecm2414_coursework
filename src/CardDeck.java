@@ -5,10 +5,10 @@ public class CardDeck {
     int id;
     String name;
 
-    public CardDeck(int deckId)
+    public CardDeck(int id)
     {
-        id = deckId;
-        name = "deck " + Integer.toString(deckId);
+        this.id = id;
+        this.name = "deck " + Integer.toString(id);
     }
 
     public String getName()

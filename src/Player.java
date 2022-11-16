@@ -16,17 +16,13 @@ public class Player implements Runnable {
     private CardDeck left;
     private CardDeck right;
     private ArrayList<Thread> thread = new ArrayList<>();
-    private boolean isRunning = true;
-    public void setRunning(boolean TorF) {
-        isRunning = TorF; //true of false
-    }
 
-    public Player(int playerId, CardDeck leftDeck, CardDeck rightDeck)
+    public Player(int id, CardDeck left, CardDeck right)
     {
-        id = playerId;
-        name = "player " + Integer.toString(playerId);
-        left = leftDeck;
-        right = rightDeck;
+        this.id = id;
+        this.name = "player " + Integer.toString(id);
+        this.left = left;
+        this.right = right;
     }
 
     public void run()

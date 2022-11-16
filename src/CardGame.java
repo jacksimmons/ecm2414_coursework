@@ -194,6 +194,5 @@ public class CardGame {
             // Wait for every thread to complete
             thread.join();
         }
-
     }
 }

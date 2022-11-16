@@ -1,9 +1,9 @@
 public class Card {
     private int value;
 
-    public Card(int cardValue)
+    public Card(int value)
     {
-        value = cardValue;
+        this.value = value;
     }
 
     public int getValue()
