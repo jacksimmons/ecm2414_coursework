@@ -15,6 +15,10 @@ public class CardDeck {
         name = "deck " + Integer.toString(deckId);
     }
 
+    /**
+     * Getter method for the name of the player
+     * @return The name of the player
+     */
     public String getName()
     {
         return name;

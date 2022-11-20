@@ -41,7 +41,8 @@ public class CardGame {
             System.out.println("Please enter location of the pack to load:");
             String path = scanner.next();
 
-            // Load the deck from file given and check the file is valid
+            // Load the deck from file given and check the file is valid; if not,
+            // display an error message to console.
             try {
                 List<String> lines = Files.readAllLines(Paths.get(path));
                 cards = new ArrayList<Card>();
@@ -70,15 +71,18 @@ public class CardGame {
 
         scanner.close();
 
+        // ArrayLists storing the player and deck objects
         ArrayList<Player> players = new ArrayList<>();
         ArrayList<CardDeck> decks = new ArrayList<>();
 
+        // Populate decks list with empty decks
         for (int i=1; i <= numPlayers; i++)
         {
             CardDeck deck = new CardDeck(i);
             decks.add(deck);
         }
 
+        // Create the players and assign them their Left and Right decks (the decks have no cards yet)
         for (int i=1; i <= numPlayers; i++)
         {
             int playerIndex = i-1;
@@ -106,6 +110,7 @@ public class CardGame {
             }
         }
 
+        // Set the otherPlayers variable for every player
         for (int i=1; i <= numPlayers; i++)
         {
             players.get(i-1).setOtherPlayers(players);
@@ -117,6 +122,7 @@ public class CardGame {
         int playerCardNumber = 0;
         boolean checkedPlayers = false;
 
+        // Deal the cards, first to the players, and then to the decks
         while (cards.size() > 0)
         {
             Random random = new Random();
@@ -173,27 +179,29 @@ public class CardGame {
             }
         }
 
+        // Console information regarding cards in each deck
         for (CardDeck deck : decks)
         {
             System.out.println(deck.getName() + " " + deck.getDeckValues());
         }
 
+        // Start a thread for every player
         ArrayList<Thread> threads = new ArrayList<>();
         for (Player player : players) {
             Thread thread = new Thread(player);
             thread.start();
             threads.add(thread);
-            System.out.println();
             System.out.println(player.getLeft().getDeckValues() + " " + player.getRight().getDeckValues());
         }
 
+        // Set the threads variable for every player
         for (Player player : players) {
             player.setThread(threads);
         }
 
+        // Wait for every thread to complete
         for (Thread thread : threads)
         {
-            // Wait for every thread to complete
             thread.join();
         }
 
