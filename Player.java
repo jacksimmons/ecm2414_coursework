@@ -126,26 +126,7 @@ public class Player implements Runnable {
     // If we get through all the cards, then we can say the player has won.
     public synchronized Card discardCard() throws InterruptedException {
         Card card = null;
-        boolean cardDiscarded = false;
-        for (int i=3; i >= 0; i--)
-        {
-            if (hand.get(i).getValue() == getId())
-            {
-                continue;
-            }
-            else
-            {
-                cardDiscarded = true;
-                card = hand.get(i);
-                hand.remove(i);
-                break;
-            }
-        }
-
-        if (!cardDiscarded)
-        {
-            handleWin();
-        }
+        Random random = new Random();
 
         return card;
     }
