@@ -87,7 +87,7 @@ public class CardGame {
 
             if (i == numPlayers)
             {
-                rightNum = 1 ;
+                rightNum = 1;
             }
 
             Player player = new Player(i, decks.get(leftNum - 1), decks.get(rightNum - 1));

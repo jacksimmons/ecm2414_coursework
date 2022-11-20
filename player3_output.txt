@@ -1,8 +1,0 @@
-player 3 draws a 1
-player 3 draws a 1
-player 3 draws a 1
-player 3 draws a 1
-player 1 has informed player 3 that player 1 has won
-player 2 has informed player 3 that player 2 has won
-player 3 wins
-player 4 has informed player 3 that player 4 has won
