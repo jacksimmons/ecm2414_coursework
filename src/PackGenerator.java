@@ -11,8 +11,10 @@ import java.nio.file.StandardOpenOption;
 public class PackGenerator {
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
+        // Create a scanner object
         Scanner scanner = new Scanner(System.in);
 
+        // Ask for input from the player
         System.out.println("File name:");
         String filename = scanner.next();
 
@@ -21,10 +23,11 @@ public class PackGenerator {
 
         scanner.close();
 
+        // Get the inputted file
         Path file = Paths.get(filename);
         Files.write(file, "".getBytes());
         
-        // All cards
+        // All cards arraylist
         ArrayList<Card> cards = new ArrayList<Card>();
         
         for (int i=0; i < 8 * numPlayers; i++)
@@ -35,6 +38,7 @@ public class PackGenerator {
 
         System.out.println(cards);
 
+        // Write the cards one-by-one to the file
         while (cards.size() > 0)
         {
             Random random = new Random();
