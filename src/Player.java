@@ -240,6 +240,12 @@ public class Player implements Runnable {
         }
     }
 
+    /**
+     * This method is called once a player wins. It handles outputting to their
+     * text file, informing other people that they have won and stopping other player's threads,
+     * in order to stop the game.
+     * @throws InterruptedException
+     */
     public synchronized void handleWin() throws InterruptedException {
         System.out.println(getName() + " wins");
         outputLine(getName() + " wins");
