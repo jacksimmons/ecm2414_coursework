@@ -20,6 +20,8 @@ public class CardGame {
         Scanner scanner = new Scanner(System.in);
 
         int numPlayers;
+
+        // Card objects read from the input file
         ArrayList<Card> cards;
         
         while (true) {

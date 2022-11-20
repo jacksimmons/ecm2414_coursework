@@ -1,5 +1,6 @@
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Random;
 import java.io.IOException;
 import java.nio.file.*;
 
@@ -25,6 +26,10 @@ public class Player implements Runnable {
         this.right = right;
     }
 
+    /* This method is called when the thread for this player starts.
+     * It repeatedly calls takeTurn, and then waits a short amount of time.
+     * The sleeping makes the simulation more readable and allows InterruptedException to be caught.
+     */
     public void run()
     {
         System.out.println(name + "has started");
@@ -41,6 +46,7 @@ public class Player implements Runnable {
         System.out.println(name + " has exited.");
     }
 
+    /* Getters and Setters */
     public int getId()
     {
         return id;
@@ -61,14 +67,23 @@ public class Player implements Runnable {
     public ArrayList<Thread> getThread() {
         return thread;
     }
-    public void setThread(ArrayList<Thread> newThread) {
-        thread = newThread;
-    }
-    public synchronized void setOtherPlayers(ArrayList<Player> players)
-    {
-        otherPlayers = players;
+    public void setThread(ArrayList<Thread> thread) {
+        this.thread = thread;
     }
 
+    /**
+     * Setter method for otherPlayers
+     * @param otherPlayers Every other player in the game
+     */
+    public synchronized void setOtherPlayers(ArrayList<Player> otherPlayers)
+    {
+        this.otherPlayers = otherPlayers;
+    }
+
+    /**
+     * A method to check if the player has won, called at the end of every turn.
+     * @return Whether or not the player has won
+     */
     public synchronized boolean checkHasWon() {
 
         ArrayList<Integer> handValues = getHandValues();
@@ -89,18 +104,31 @@ public class Player implements Runnable {
         return playerHasWon;
     }
 
+    /**
+     * Method to handle every player turn.
+     * An atomic action - before this method, player has 4 cards;
+     * after this method, they still have 4.
+     * @throws InterruptedException
+     */
     private synchronized void takeTurn() throws InterruptedException
-    // An atomic action - before this method, player has 4 cards;
-    // after this method, they still have 4.
     {
-        //System.out.println(getName() + " takes a turn.");
-
+        // Get a card from the deck to the left
         Card leftCard = left.popCard();
+
+        // Check if leftCard is null, as popCard returns null if the deck has no cards
         if (leftCard != null) {
+
+            // Discard to the right
             Card rightCard = discardCard();
             right.addCard(rightCard);
+
+            // Add leftCard to the deck
             drawCard(leftCard);
+
+            // Output player hand to the console
             System.out.println(getName() + ": " + getHandValues());
+
+            // Check if the player has won
             if (checkHasWon()){
                 handleWin();
             };
@@ -108,6 +136,10 @@ public class Player implements Runnable {
 
     }
 
+    /**
+     * Adds the given card to the player's hand
+     * @param drawnCard The given card
+     */
     public synchronized void drawCard(Card drawnCard)
     {
         if (hand.size() <= 3)
@@ -117,40 +149,48 @@ public class Player implements Runnable {
         }
     }
 
-    // Remove the 4th card.
-    // If the 4th card is preferred, go down to the 3rd, etc...
-    // If we get through all the cards, then we can say the player has won.
+    /**
+     * Randomly discards and returns a card from the hand
+     * @return The card
+     * @throws InterruptedException
+     */
     public synchronized Card discardCard() throws InterruptedException {
+
         Card card = null;
-        boolean cardDiscarded = false;
-        for (int i=3; i >= 0; i--)
+        Random random = new Random();
+
+        while (hand.size() > 0)
         {
-            if (hand.get(i).getValue() == getId())
+            int randIndex = random.nextInt(hand.size());
+
+            if (hand.get(randIndex).getValue() == getId())
             {
                 continue;
             }
             else
             {
-                cardDiscarded = true;
-                card = hand.get(i);
-                hand.remove(i);
-                break;
+                card = hand.get(randIndex);
+                hand.remove(card);
+                return card;
             }
-        }
-
-        if (!cardDiscarded)
-        {
-            handleWin();
         }
 
         return card;
     }
 
+    /**
+     * Getter method for the hand
+     * @return The hand
+     */
     public synchronized ArrayList<Card> getHand()
     {
         return hand;
     }
 
+    /**
+     * Returns the hand as a list storing the values of each card
+     * @return The list of card values
+     */
     public synchronized ArrayList<Integer> getHandValues()
     {
         ArrayList<Integer> handValues = new ArrayList<>();
@@ -161,11 +201,19 @@ public class Player implements Runnable {
         return handValues;
     }
 
-    public synchronized void setOutputFile(Path file)
+    /**
+     * Output File setter method
+     * @param outputFile The path of the output file
+     */
+    public synchronized void setOutputFile(Path outputFile)
     {
-        outputFile = file;
+        this.outputFile = outputFile;
     }
 
+    /**
+     * Outputs a line to the output file
+     * @param line The line to be written
+     */
     public synchronized void outputLine(String line)
     {
         try {
@@ -176,6 +224,10 @@ public class Player implements Runnable {
         }
     }
 
+    /**
+     * Handles file output for other players after winning
+     * @param players The players to inform
+     */
     public synchronized void informPlayers(ArrayList<Player> players)
     {
         for (int i=0; i < players.size(); i++)
