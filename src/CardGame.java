@@ -46,6 +46,8 @@ public class CardGame {
             try {
                 List<String> lines = Files.readAllLines(Paths.get(path));
                 cards = new ArrayList<Card>();
+
+                // Convert every line in the file into a card
                 while (lines.size() > 0)
                 {
                     String line = lines.get(lines.size() - 1);
@@ -54,6 +56,7 @@ public class CardGame {
                     cards.add(lineCard);
                 }
 
+                // The pack must have 8n cards, where n is the number of players
                 if (numPlayers * 8 != cards.size())
                 {
                     System.out.println("Invalid pack file length.");
@@ -85,7 +88,6 @@ public class CardGame {
         // Create the players and assign them their Left and Right decks (the decks have no cards yet)
         for (int i=1; i <= numPlayers; i++)
         {
-            int playerIndex = i-1;
             int leftNum = i;
             int rightNum = i + 1;
 
@@ -125,11 +127,17 @@ public class CardGame {
         // Deal the cards, first to the players, and then to the decks
         while (cards.size() > 0)
         {
+            // Get a random card from the pack
             Random random = new Random();
             Card card = cards.get(random.nextInt(cards.size()));
 
+            // Until every player has had their cards dealt, continue this block
             if (!playersDealt)
             {
+                // Iterate over every player until the end of the players list is reached,
+                // then start again, incrementing playerCardNumber.
+                // When playerCardNumber == 3 (4th card) and every player has been dealt
+                // their card, then every player has been dealt their cards.
                 if (playerIndex < players.size())
                 {
                     Player player = players.get(playerIndex);
@@ -149,6 +157,7 @@ public class CardGame {
             }
             else
             {
+                // Check whether a player has already won from their starting cards
                 if (!checkedPlayers)
                 {
                     for (int i=0; i < numPlayers; i++)
@@ -165,6 +174,7 @@ public class CardGame {
                     checkedPlayers = true;
                 }
 
+                // Deal the remaining cards to the decks
                 if (deckIndex < decks.size())
                 {
                     CardDeck deck = decks.get(deckIndex);
@@ -204,6 +214,5 @@ public class CardGame {
         {
             thread.join();
         }
-
     }
 }
