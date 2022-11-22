@@ -2,6 +2,9 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.io.IOException;
 
+/**
+ * Base class for objects which hold cards.
+ */
 public class CardHolder {
     protected int id;
     protected String name;

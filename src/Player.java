@@ -4,10 +4,10 @@ import java.util.Random;
 import java.io.IOException;
 import java.nio.file.*;
 
+/** A class used as a thread in CardGame.
+ * This class handles any player input and card dealing after the initial hands are dealt.
+ */
 public class Player extends CardHolder implements Runnable {
-    /* A class used as a thread in CardGame.
-     * This class handles any player input and card dealing after the initial hands are dealt.
-     */
     private ArrayList<Player> otherPlayers = new ArrayList<>();
 
     private CardDeck left;
@@ -72,6 +72,7 @@ public class Player extends CardHolder implements Runnable {
     public void setThread(ArrayList<Thread> thread) {
         this.thread = thread;
     }
+    
     public ArrayList<Player> getOtherPlayers() {
         return otherPlayers;
     }
@@ -96,14 +97,7 @@ public class Player extends CardHolder implements Runnable {
 
         boolean playerHasWon = false;
 
-        // If the first value isn't the preferred denomination,
-        // return false.
-        if (!(firstValue == getId()))
-        {
-            return false;
-        }
-
-        // Otherwise, check all other cards are the preferred denomination.
+        // Check all other cards are the same as the first card
         for (int j=0; j < 4; j++)
         {
             if (handValues.get(j) != firstValue)

@@ -8,12 +8,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 
-
+/** A class which handles the whole game.
+    * It handles the beginning of the game (dealing to the players and the decks), then runs the Player threads.
+    * The Player threads then continue the game.
+    */
 public class CardGame {
-    /* A class which handles the whole game.
-     * It handles the beginning of the game (dealing to the players and the decks), then runs the Player threads.
-     * The Player threads then continue the game.
-     */
     public static void main(String[] args) throws InterruptedException
     {
         // Create scanner for input
@@ -41,7 +40,7 @@ public class CardGame {
             catch (InputMismatchException e)
             {
                 System.out.println("Invalid number of players.");
-                scanner.next("\n");
+                scanner.next();
                 continue;
             }
 
