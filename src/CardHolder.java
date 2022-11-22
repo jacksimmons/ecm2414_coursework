@@ -13,6 +13,8 @@ public class CardHolder {
     protected ArrayList<Card> hand = new ArrayList<>();
 
     protected Path outputFile;
+
+    public CardHolder() {}
     
     /**
      * Adds a card to the hand.
