@@ -13,6 +13,8 @@ public class PlayerTest {
     CardDeck leftDeck = new CardDeck(1);
     CardDeck rightDeck = new CardDeck(2);
     ArrayList<Player> players = new ArrayList<>();
+
+    // Creates 4 players and adds them to a list of players.
     public void createPlayers () {
         for (int i=1; i <= numPlayers; i++)
         {
@@ -21,12 +23,16 @@ public class PlayerTest {
         }
     }
 
+    // Used for testing methods that only need 1 player.
     Player testPlayer = new Player(1, leftDeck, rightDeck);
 
     ArrayList<Thread> threads = new ArrayList<>();
 
+    /**
+     * Creates and starts threads for all players in the list players.
+     * @throws InterruptedException
+     */
     public void setUpThreads() throws InterruptedException {
-        PlayerTest test = new PlayerTest();
 
         // Create a thread for every player
         for(Player player : players) {
@@ -43,7 +49,6 @@ public class PlayerTest {
         for (Thread thread : threads) {
             thread.start();
             System.out.println(thread);
-            thread.interrupt();
         }
 
         // Wait for every thread to complete
@@ -90,8 +95,9 @@ public class PlayerTest {
     @Test
     public void getThread() throws InterruptedException {
 //        PlayerTest test = new PlayerTest();
+//        test.createPlayers();
 //        test.setUpThreads();
-//        System.out.println(player1.getThread());
+//        System.out.println(test.players.get(0).getThread());
 
     }
 
@@ -105,13 +111,20 @@ public class PlayerTest {
         test.createPlayers();
         for (int i=1; i <= numPlayers; i++)
         {
-            test.players.get(i-1).setOtherPlayers(test.players);
+            ArrayList<Player> tempOtherPlayers = new ArrayList<>();
+            for (Player player : test.players) {
+                tempOtherPlayers.add(player);
+            }
+            tempOtherPlayers.remove(i-1);
+            test.players.get(i-1).setOtherPlayers(tempOtherPlayers);
+
         }
-        assert test.players.get(0).getOtherPlayers().size() == numPlayers;
+        assert test.players.get(0).getOtherPlayers().size() == numPlayers - 1;
     }
 
     @Test
     public void checkHasWon() {
+        // 4 different cards therefore the player should not win
         ArrayList<Card> cards = new ArrayList<>();
         for (int i=1; i<=4; i++){
             cards.add(new Card(i));
@@ -121,6 +134,7 @@ public class PlayerTest {
         }
         assert testPlayer.checkHasWon() == false;
 
+        // 4 of the same card of the players preferred card therefore the player should win
         cards = new ArrayList<>();
         testPlayer.hand = new ArrayList<>();
         for (int i=1; i<=4; i++){
@@ -131,17 +145,36 @@ public class PlayerTest {
         }
         assert testPlayer.checkHasWon();
 
+        // 4 of the same card which is not of the players preferred card. This can happen at the
+        // start of a game. In this case, the player should win.
+
+        cards = new ArrayList<>();
+        testPlayer.hand = new ArrayList<>();
+        for (int i=1; i<=4; i++){
+            cards.add(new Card(2));
+        }
+        for (int i=0; i<=3; i++){
+            testPlayer.hand.add(cards.get(i));
+        }
+        assert testPlayer.checkHasWon();
+
+
     }
     @Test
     public void drawCard() {
+        /**
+         * First test is to see if the method works in adding a card to a
+         * players hand.
+         */
         Card card = new Card(1);
         testPlayer.drawCard(card);
         assert testPlayer.hand.size() == 1;
         assert testPlayer.hand.get(0).equals(card);
-    }
-
-    @Test
-    public void discardCard() throws InterruptedException {
+        /**
+         * This test is to check whether more than 4 cards can be added to
+         * a players hand, as a player can only have 4 cards at one time.
+         */
+        testPlayer.hand = new ArrayList<>();
         ArrayList<Card> cards = new ArrayList<>();
         for (int i=1; i<=4; i++){
             cards.add(new Card(i));
@@ -149,19 +182,42 @@ public class PlayerTest {
         for (int i=0; i<=3; i++){
             testPlayer.hand.add(cards.get(i));
         }
+        testPlayer.drawCard(card);
+        assert !(testPlayer.hand.size() > 4);
+
+    }
+
+    @Test
+    public void discardCard() throws InterruptedException {
         /**
-         * Trying to remove all 4 cards from the hand whilst there is a preferred card in the hand.
-         * Testing to see how the method reacts to trying to remove a preferred card.
+         * Testing whether the method works with just 1 card.
+         */
+        Card card = new Card(5);
+        testPlayer.hand.add(card);
+        testPlayer.discardCard(rightDeck);
+        assert testPlayer.hand.size() == 0;
+        assert rightDeck.getHandValues().size() == 1;
+
+        /**
+         * Trying to remove all 4 cards from the hand whilst there is a preferred card (1) in the hand.
+         * Testing to see how the method reacts to trying to remove a preferred card when it's the only
+         * card left.
          * It should not throw an error and keep the card in its hand.
          */
+
+        rightDeck = new CardDeck(2);
+        ArrayList<Card> cards = new ArrayList<>();
+        for (int i=1; i<=4; i++){
+            cards.add(new Card(i));
+        }
+        for (int i=0; i<=3; i++){
+            testPlayer.hand.add(cards.get(i));
+        }
+
         testPlayer.discardCard(rightDeck);
-        System.out.println(testPlayer.getHandValues());
         testPlayer.discardCard(rightDeck);
-        System.out.println(testPlayer.getHandValues());
         testPlayer.discardCard(rightDeck);
-        System.out.println(testPlayer.getHandValues());
         testPlayer.discardCard(rightDeck);
-        System.out.println(testPlayer.getHandValues());
         assert testPlayer.hand.size() > 0;
         assert testPlayer.getHandValues().contains(1);
         assert rightDeck.getHandValues().size() == 3;
@@ -171,26 +227,18 @@ public class PlayerTest {
     }
 
     @Test
-    public void getHand() {
-    }
-
-    @Test
-    public void getHandValues() {
-    }
-
-    @Test
-    public void setOutputFile() {
-    }
-
-    @Test
-    public void outputLine() {
-    }
-
-    @Test
     public void informPlayers() {
+        PlayerTest test = new PlayerTest();
+        test.createPlayers();
+        testPlayer.informPlayers(players);
     }
 
     @Test
-    public void handleWin() {
+    public void handleWin() throws InterruptedException {
+        PlayerTest test = new PlayerTest();
+        test.createPlayers();
+        test.setUpThreads();
+        players.get(1).handleWin();
+
     }
 }
