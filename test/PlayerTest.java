@@ -56,22 +56,22 @@ public class PlayerTest {
 
     @Test
     public void getId() {
-        assert players.get(0).getId() == 1;
+        assert testPlayer.getId() == 5;
     }
 
     @Test
     public void getName() {
-        assert players.get(0).getName() == "player " + (players.get(0).getId());
+        assert testPlayer.getName().equals("player " + Integer.toString(testPlayer.getId()));
     }
 
     @Test
     public void getLeft() {
-        assert players.get(0).getLeft().equals(leftDeck);
+        assert testPlayer.getLeft().equals(leftDeck);
     }
 
     @Test
     public void getRight() {
-        assert players.get(0).getRight().equals(rightDeck);
+        assert testPlayer.getRight().equals(rightDeck);
     }
 
     @Test
@@ -171,9 +171,10 @@ public class PlayerTest {
         /*
          * Testing whether the method works with just 1 card.
          */
-        Card card = new Card(5);
+        Card card = new Card(1);
         testPlayer.hand.add(card);
         testPlayer.discardCard(rightDeck);
+        System.out.println(testPlayer.getHandValues());
         assert testPlayer.hand.size() == 0;
         assert rightDeck.getHandValues().size() == 1;
 
@@ -186,7 +187,7 @@ public class PlayerTest {
 
         rightDeck = new CardDeck(2);
         ArrayList<Card> cards = new ArrayList<>();
-        for (int i=1; i<=4; i++){
+        for (int i=2; i<=5; i++){
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
@@ -198,9 +199,9 @@ public class PlayerTest {
         testPlayer.discardCard(rightDeck);
         testPlayer.discardCard(rightDeck);
         assert testPlayer.hand.size() > 0;
-        assert testPlayer.getHandValues().contains(1);
+        assert testPlayer.getHandValues().contains(5);
         assert rightDeck.getHandValues().size() == 3;
-        assert !rightDeck.getHandValues().contains(1);
+        assert !rightDeck.getHandValues().contains(5);
 
 
     }

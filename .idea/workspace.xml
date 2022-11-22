@@ -54,58 +54,57 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.getThread">
+  <component name="RunManager" selected="JUnit.PlayerTest">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.checkHasWon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="checkHasWon" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.discardCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecm2414_coursework" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
+      <option name="METHOD_NAME" value="discardCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.getThread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="getThread" />
+      <option name="METHOD_NAME" value="getLeft" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.handleWin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="handleWin" />
+      <option name="METHOD_NAME" value="getName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.informPlayers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="informPlayers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecm2414_coursework" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="testRun" />
+      <option name="METHOD_NAME" value="getRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerTest.getThread" />
-        <item itemvalue="JUnit.PlayerTest.testRun" />
-        <item itemvalue="JUnit.PlayerTest.handleWin" />
-        <item itemvalue="JUnit.PlayerTest.informPlayers" />
-        <item itemvalue="JUnit.PlayerTest.checkHasWon" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest.getRight" />
+        <item itemvalue="JUnit.PlayerTest.getName" />
+        <item itemvalue="JUnit.PlayerTest.getLeft" />
+        <item itemvalue="JUnit.PlayerTest.discardCard" />
       </list>
     </recent_temporary>
   </component>
