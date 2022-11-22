@@ -69,6 +69,9 @@ public class Player extends CardHolder implements Runnable {
     public void setThread(ArrayList<Thread> thread) {
         this.thread = thread;
     }
+    public ArrayList<Player> getOtherPlayers() {
+        return otherPlayers;
+    }
 
     /**
      * Setter method for otherPlayers
@@ -174,7 +177,7 @@ public class Player extends CardHolder implements Runnable {
         }
 
         // Randomly select a card from the deck.
-        while (hand.size() > 0)
+        while (hand.size() > 0 && possibleIndices.size() > 0)
         {
             int randIndex = random.nextInt(possibleIndices.size());
             int randValue = possibleIndices.get(randIndex);
