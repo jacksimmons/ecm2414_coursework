@@ -5,3 +5,6 @@ PackGenerator can be used to generate a valid pack, but it was made for testing 
 CardGame runs the simulation.
 
 -- Testing --
+The test is contained within the TestRunner class.
+Almost every test is done using asserts, however some tests (those involving CardHolder.outputLine())
+are 
