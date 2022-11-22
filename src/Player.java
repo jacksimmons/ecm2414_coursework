@@ -33,8 +33,9 @@ public class Player extends CardHolder implements Runnable {
         {
             try {
                 takeTurn();
-                Random random = new Random();
-                Thread.sleep(random.nextInt(1000));
+                //Random random = new Random();
+                //Thread.sleep(random.nextInt(1000));
+                Thread.sleep(100);
             }
             catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
