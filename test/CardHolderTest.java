@@ -31,6 +31,16 @@ public class CardHolderTest {
     }
 
     @Test
+    public void getStringHandValues() {
+        cardHolder.addCard(new Card(0));
+        cardHolder.addCard(new Card(1));
+        cardHolder.addCard(new Card(2));
+        cardHolder.addCard(new Card(3));
+
+        assert cardHolder.getStringHandValues().equals(" 0 1 2 3");
+    }
+
+    @Test
     public void setOutputFile() {
     }
 
