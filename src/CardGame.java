@@ -25,21 +25,30 @@ public class CardGame {
         ArrayList<Card> cards;
         
         while (true) {
+            scanner = new Scanner(System.in);
+
             // Ask for input on number of players
             System.out.println("Please enter the number of players:");
             try {
                 numPlayers = scanner.nextInt();
+
+                if (numPlayers <= 0)
+                {
+                    System.out.println("Number of players must be greater than zero.");
+                    continue;
+                }
             }
             catch (InputMismatchException e)
             {
                 System.out.println("Invalid number of players.");
-                scanner.next();
+                scanner.next("\n");
                 continue;
             }
 
             // Ask for input on file location
             System.out.println("Please enter location of the pack to load:");
-            String path = scanner.next();
+            scanner.nextLine();
+            String path = scanner.nextLine();
 
             // Load the deck from file given and check the file is valid; if not,
             // display an error message to console.
@@ -60,7 +69,6 @@ public class CardGame {
                 if (numPlayers * 8 != cards.size())
                 {
                     System.out.println("Invalid pack file length.");
-                    scanner.next();
                     continue;
                 }
 
@@ -68,6 +76,9 @@ public class CardGame {
 
             } catch (IOException e) {
                 System.out.println("Couldn't open pack file.");
+                continue;
+            } catch (NumberFormatException e) {
+                System.out.println("Couldn't read pack file: it has a non-integer value in it.");
                 continue;
             }
         }
@@ -182,7 +193,13 @@ public class CardGame {
                         Player player = players.get(i);
 
                         if (player.checkHasWon()){
+                            Thread thread = new Thread(player);
+                            thread.start();
+                            ArrayList<Thread> threads = new ArrayList<>();
+                            threads.add(thread);
+                            player.setThread(threads);
                             player.handleWin();
+                            return;
                         };
                         
                         player.outputLine(player.getName() + " initial hand" + player.getStringHandValues());

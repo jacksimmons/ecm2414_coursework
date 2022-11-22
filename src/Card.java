@@ -4,10 +4,11 @@
 public class Card {
     private int value; //The number value of the card
 
+    // Constructor for a card object.x
     public Card(int cardValue)
     {
         value = cardValue;
-    } //Constructor for a card object.
+    }
 
     /**
      * Getter method for value

@@ -28,7 +28,7 @@ public class Player extends CardHolder implements Runnable {
      */
     public void run()
     {
-        System.out.println(name + "has started");
+        System.out.println(name + " has started");
         while (!Thread.currentThread().isInterrupted())
         {
             try {
@@ -63,9 +63,11 @@ public class Player extends CardHolder implements Runnable {
     public CardDeck getRight() {
         return right;
     }
+
     public ArrayList<Thread> getThread() {
         return thread;
     }
+
     public void setThread(ArrayList<Thread> thread) {
         this.thread = thread;
     }
@@ -89,6 +91,15 @@ public class Player extends CardHolder implements Runnable {
         int firstValue = handValues.get(0);
 
         boolean playerHasWon = false;
+
+        // If the first value isn't the preferred denomination,
+        // return false.
+        if (!(firstValue == getId()))
+        {
+            return false;
+        }
+
+        // Otherwise, check all other cards are the preferred denomination.
         for (int j=0; j < 4; j++)
         {
             if (handValues.get(j) != firstValue)
