@@ -196,7 +196,7 @@ public class CardGame {
                             thread.start();
                             ArrayList<Thread> threads = new ArrayList<>();
                             threads.add(thread);
-                            player.setThread(threads);
+                            player.setThreads(threads);
                             player.handleWin();
                             return;
                         };
@@ -238,7 +238,7 @@ public class CardGame {
 
         // Set the threads variable for every player
         for (Player player : players) {
-            player.setThread(threads);
+            player.setThreads(threads);
         }
 
         // Start all the threads

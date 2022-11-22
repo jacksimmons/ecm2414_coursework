@@ -235,7 +235,7 @@ public class Player extends CardHolder implements Runnable {
         System.out.println(getName() + " wins");
         outputLine(getName() + " wins");
         informPlayers(otherPlayers);
-        for (Thread playerThread : thread) {
+        for (Thread playerThread : threads) {
             playerThread.interrupt();
         }
     }

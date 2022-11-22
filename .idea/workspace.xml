@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +55,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest">
+  <component name="RunManager" selected="Application.TestRunner">
+    <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestRunner" />
+      <module name="ecm2414_coursework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <method v="2">
@@ -66,16 +74,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.discardCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecm2414_coursework" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="discardCard" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestRunner" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.getRight" />
         <item itemvalue="JUnit.PlayerTest.getName" />
         <item itemvalue="JUnit.PlayerTest.getLeft" />
-        <item itemvalue="JUnit.PlayerTest.discardCard" />
       </list>
     </recent_temporary>
   </component>
