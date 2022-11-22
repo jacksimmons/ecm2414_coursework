@@ -12,7 +12,7 @@ public class Player extends CardHolder implements Runnable {
 
     private CardDeck left;
     private CardDeck right;
-    private ArrayList<Thread> thread = new ArrayList<>();
+    private ArrayList<Thread> threads = new ArrayList<>();
 
     public Player(int id, CardDeck left, CardDeck right)
     {
@@ -65,14 +65,14 @@ public class Player extends CardHolder implements Runnable {
         return right;
     }
 
-    public ArrayList<Thread> getThread() {
-        return thread;
+    public ArrayList<Thread> getThreads() {
+        return threads;
     }
 
-    public void setThread(ArrayList<Thread> thread) {
-        this.thread = thread;
+    public void setThreads(ArrayList<Thread> threads) {
+        this.threads = threads;
     }
-    
+
     public ArrayList<Player> getOtherPlayers() {
         return otherPlayers;
     }

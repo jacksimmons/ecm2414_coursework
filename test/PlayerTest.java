@@ -44,7 +44,7 @@ public class PlayerTest {
 
         // Set the threads variable for every player
         for (Player player : players) {
-            player.setThread(threads);
+            player.setThreads(threads);
         }
 
         // Start all the threads
@@ -75,16 +75,16 @@ public class PlayerTest {
     }
 
     @Test
-    public void getThread() {
+    public void getThreads() {
         PlayerTest test = new PlayerTest();
         test.createPlayers();
         test.setUpThreads();
-        assert test.players.get(1).getThread().size() == numPlayers;
+        assert test.players.get(1).getThreads().size() == numPlayers;
 
     }
 
     @Test
-    public void setThread() {
+    public void setThreads() {
     }
 
     @Test
