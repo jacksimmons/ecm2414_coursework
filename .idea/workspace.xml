@@ -51,11 +51,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rosss\Documents\GitHub\ecm2414_coursework\test" />
+      <recent name="C:\Users\rosss\Documents\GitHub\ecm2414_coursework\Testing\JUnit" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestRunner">
+  <component name="RunManager" selected="JUnit.CardHolderTest.getStringHandValues">
     <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestRunner" />
       <module name="ecm2414_coursework" />
@@ -69,6 +73,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CardHolderTest.addCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecm2414_coursework" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CardHolderTest" />
+      <option name="METHOD_NAME" value="addCard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardHolderTest.getHandValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecm2414_coursework" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CardHolderTest" />
+      <option name="METHOD_NAME" value="getHandValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardHolderTest.getStringHandValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecm2414_coursework" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CardHolderTest" />
+      <option name="METHOD_NAME" value="getStringHandValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
@@ -78,43 +112,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.getLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecm2414_coursework" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="getLeft" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.getName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecm2414_coursework" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="getName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.getRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecm2414_coursework" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="getRight" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CardHolderTest.getStringHandValues" />
+        <item itemvalue="JUnit.CardHolderTest.getHandValues" />
+        <item itemvalue="JUnit.CardHolderTest.addCard" />
         <item itemvalue="Application.TestRunner" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.PlayerTest.getRight" />
-        <item itemvalue="JUnit.PlayerTest.getName" />
-        <item itemvalue="JUnit.PlayerTest.getLeft" />
       </list>
     </recent_temporary>
   </component>
