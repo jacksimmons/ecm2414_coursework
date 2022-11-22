@@ -1,1 +1,1 @@
-deck 10 contents: 13 14 19 10
+deck 10 contents: 2 3 17 20

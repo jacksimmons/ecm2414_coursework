@@ -9,6 +9,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/**
+ * A testing object for creating packs based on the number of players
+ * provided.
+ */
 public class PackGenerator {
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
