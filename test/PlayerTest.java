@@ -229,7 +229,6 @@ public class PlayerTest {
             player.setOutputFile(path);
         }
         testPlayer.informPlayers(test.players);
-
     }
 
     @Test
