@@ -11,13 +11,13 @@ public class CardDeckTest {
     @Test
     public void testAddCard() {
         cardDeck.addCard(newCard);
-        assert cardDeck.deck.size() == 1;
+        assert cardDeck.hand.size() == 1;
     }
 
     @Test
     public void testPopCard() {
         cardDeck.popCard();
-        assert cardDeck.deck.size() == 0;
+        assert cardDeck.hand.size() == 0;
 
     }
 
@@ -26,6 +26,6 @@ public class CardDeckTest {
         cardDeck.addCard(newCard);
         ArrayList<Integer> testArray = new ArrayList<>();
         testArray.add(5);
-        assert ( cardDeck.getDeckValues().equals(testArray));
+        assert ( cardDeck.getHandValues().equals(testArray));
     }
 }
