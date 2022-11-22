@@ -1,127 +1,121 @@
-player 8 initial hand 15 2 9 20
-player 8 discards a 2 to deck 9
-player 8 draws a 19 from deck 8
-player 8 current hand is 15 9 20 19
-player 8 discards a 20 to deck 9
-player 8 draws a 4 from deck 8
-player 8 current hand is 15 9 19 4
-player 8 discards a 15 to deck 9
-player 8 draws a 6 from deck 8
-player 8 current hand is 9 19 4 6
-player 8 discards a 19 to deck 9
-player 8 draws a 18 from deck 8
-player 8 current hand is 9 4 6 18
-player 8 discards a 9 to deck 9
-player 8 draws a 16 from deck 8
-player 8 current hand is 4 6 18 16
-player 8 discards a 18 to deck 9
-player 8 draws a 12 from deck 8
-player 8 current hand is 4 6 16 12
-player 8 discards a 12 to deck 9
-player 8 draws a 5 from deck 8
-player 8 current hand is 4 6 16 5
+player 8 initial hand 13 16 5 4
 player 8 discards a 5 to deck 9
 player 8 draws a 11 from deck 8
-player 8 current hand is 4 6 16 11
+player 8 current hand is 13 16 4 11
 player 8 discards a 11 to deck 9
-player 8 draws a 19 from deck 8
-player 8 current hand is 4 6 16 19
-player 8 discards a 19 to deck 9
-player 8 draws a 11 from deck 8
-player 8 current hand is 4 6 16 11
-player 8 discards a 6 to deck 9
-player 8 draws a 18 from deck 8
-player 8 current hand is 4 16 11 18
-player 8 discards a 16 to deck 9
-player 8 draws a 10 from deck 8
-player 8 current hand is 4 11 18 10
-player 8 discards a 10 to deck 9
-player 8 draws a 1 from deck 8
-player 8 current hand is 4 11 18 1
-player 8 discards a 11 to deck 9
-player 8 draws a 8 from deck 8
-player 8 current hand is 4 18 1 8
-player 8 discards a 1 to deck 9
-player 8 draws a 11 from deck 8
-player 8 current hand is 4 18 8 11
-player 8 discards a 11 to deck 9
-player 8 draws a 15 from deck 8
-player 8 current hand is 4 18 8 15
-player 8 discards a 18 to deck 9
-player 8 draws a 8 from deck 8
-player 8 current hand is 4 8 15 8
-player 8 discards a 15 to deck 9
-player 8 draws a 16 from deck 8
-player 8 current hand is 4 8 8 16
-player 8 discards a 4 to deck 9
-player 8 draws a 17 from deck 8
-player 8 current hand is 8 8 16 17
-player 8 discards a 17 to deck 9
 player 8 draws a 3 from deck 8
-player 8 current hand is 8 8 16 3
-player 8 discards a 3 to deck 9
-player 8 draws a 2 from deck 8
-player 8 current hand is 8 8 16 2
-player 8 discards a 16 to deck 9
-player 8 draws a 10 from deck 8
-player 8 current hand is 8 8 2 10
-player 8 discards a 10 to deck 9
-player 8 draws a 10 from deck 8
-player 8 current hand is 8 8 2 10
-player 8 discards a 10 to deck 9
-player 8 draws a 2 from deck 8
-player 8 current hand is 8 8 2 2
-player 8 discards a 2 to deck 9
-player 8 draws a 12 from deck 8
-player 8 current hand is 8 8 2 12
-player 8 discards a 2 to deck 9
-player 8 draws a 16 from deck 8
-player 8 current hand is 8 8 12 16
-player 8 discards a 12 to deck 9
-player 8 draws a 17 from deck 8
-player 8 current hand is 8 8 16 17
-player 8 discards a 16 to deck 9
+player 8 current hand is 13 16 4 3
+player 8 discards a 13 to deck 9
 player 8 draws a 1 from deck 8
-player 8 current hand is 8 8 17 1
+player 8 current hand is 16 4 3 1
+player 8 discards a 16 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 4 3 1 17
 player 8 discards a 17 to deck 9
+player 8 draws a 10 from deck 8
+player 8 current hand is 4 3 1 10
+player 8 discards a 1 to deck 9
+player 8 draws a 15 from deck 8
+player 8 current hand is 4 3 10 15
+player 8 discards a 10 to deck 9
+player 8 draws a 9 from deck 8
+player 8 current hand is 4 3 15 9
+player 8 discards a 3 to deck 9
+player 8 draws a 15 from deck 8
+player 8 current hand is 4 15 9 15
+player 8 discards a 4 to deck 9
+player 8 draws a 19 from deck 8
+player 8 current hand is 15 9 15 19
+player 8 discards a 9 to deck 9
+player 8 draws a 4 from deck 8
+player 8 current hand is 15 15 19 4
+player 8 discards a 19 to deck 9
 player 8 draws a 18 from deck 8
-player 8 current hand is 8 8 1 18
+player 8 current hand is 15 15 4 18
+player 8 discards a 15 to deck 9
+player 8 draws a 2 from deck 8
+player 8 current hand is 15 4 18 2
+player 8 discards a 2 to deck 9
+player 8 draws a 13 from deck 8
+player 8 current hand is 15 4 18 13
+player 8 discards a 4 to deck 9
+player 8 draws a 2 from deck 8
+player 8 current hand is 15 18 13 2
+player 8 discards a 15 to deck 9
+player 8 draws a 8 from deck 8
+player 8 current hand is 18 13 2 8
 player 8 discards a 18 to deck 9
 player 8 draws a 9 from deck 8
-player 8 current hand is 8 8 1 9
+player 8 current hand is 13 2 8 9
 player 8 discards a 9 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 13 2 8 17
+player 8 discards a 2 to deck 9
+player 8 draws a 8 from deck 8
+player 8 current hand is 13 8 17 8
+player 8 discards a 17 to deck 9
+player 8 draws a 11 from deck 8
+player 8 current hand is 13 8 8 11
+player 8 discards a 13 to deck 9
+player 8 draws a 19 from deck 8
+player 8 current hand is 8 8 11 19
+player 8 discards a 19 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 8 8 11 17
+player 8 discards a 11 to deck 9
+player 8 draws a 3 from deck 8
+player 8 current hand is 8 8 17 3
+player 8 discards a 3 to deck 9
+player 8 draws a 12 from deck 8
+player 8 current hand is 8 8 17 12
+player 8 discards a 12 to deck 9
+player 8 draws a 14 from deck 8
+player 8 current hand is 8 8 17 14
+player 8 discards a 17 to deck 9
+player 8 draws a 1 from deck 8
+player 8 current hand is 8 8 14 1
+player 8 discards a 14 to deck 9
 player 8 draws a 20 from deck 8
 player 8 current hand is 8 8 1 20
 player 8 discards a 1 to deck 9
-player 8 draws a 12 from deck 8
-player 8 current hand is 8 8 20 12
-player 8 discards a 12 to deck 9
+player 8 draws a 11 from deck 8
+player 8 current hand is 8 8 20 11
+player 8 discards a 11 to deck 9
 player 8 draws a 20 from deck 8
 player 8 current hand is 8 8 20 20
 player 8 discards a 20 to deck 9
+player 8 draws a 19 from deck 8
+player 8 current hand is 8 8 20 19
+player 8 discards a 19 to deck 9
+player 8 draws a 10 from deck 8
+player 8 current hand is 8 8 20 10
+player 8 discards a 10 to deck 9
 player 8 draws a 14 from deck 8
 player 8 current hand is 8 8 20 14
 player 8 discards a 14 to deck 9
-player 8 draws a 3 from deck 8
-player 8 current hand is 8 8 20 3
-player 8 discards a 3 to deck 9
-player 8 draws a 19 from deck 8
-player 8 current hand is 8 8 20 19
+player 8 draws a 18 from deck 8
+player 8 current hand is 8 8 20 18
 player 8 discards a 20 to deck 9
-player 8 draws a 12 from deck 8
-player 8 current hand is 8 8 19 12
-player 8 discards a 19 to deck 9
-player 8 draws a 19 from deck 8
-player 8 current hand is 8 8 12 19
-player 8 discards a 12 to deck 9
-player 8 draws a 14 from deck 8
-player 8 current hand is 8 8 19 14
-player 8 discards a 14 to deck 9
-player 8 draws a 14 from deck 8
-player 8 current hand is 8 8 19 14
-player 8 discards a 14 to deck 9
+player 8 draws a 13 from deck 8
+player 8 current hand is 8 8 18 13
+player 8 discards a 13 to deck 9
+player 8 draws a 20 from deck 8
+player 8 current hand is 8 8 18 20
+player 8 discards a 18 to deck 9
 player 8 draws a 8 from deck 8
-player 8 current hand is 8 8 19 8
-player 5 has informed player 8 that player 5 has won
+player 8 current hand is 8 8 20 8
+player 8 discards a 20 to deck 9
+player 8 draws a 16 from deck 8
+player 8 current hand is 8 8 8 16
+player 8 discards a 16 to deck 9
+player 8 draws a 15 from deck 8
+player 8 current hand is 8 8 8 15
+player 8 discards a 15 to deck 9
+player 8 draws a 1 from deck 8
+player 8 current hand is 8 8 8 1
+player 8 discards a 1 to deck 9
+player 8 draws a 19 from deck 8
+player 8 current hand is 8 8 8 19
+player 2 has informed player 8 that player 2 has won
 player 8 has exited.
-player 8 final hand 8 8 19 8
+player 8 final hand 8 8 8 19

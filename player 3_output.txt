@@ -1,142 +1,121 @@
-player 3 initial hand 12 14 19 5
+player 3 initial hand 13 19 20 18
 player 3 discards a 19 to deck 4
-player 3 draws a 20 from deck 3
-player 3 current hand is 12 14 5 20
-player 3 discards a 5 to deck 4
-player 3 draws a 12 from deck 3
-player 3 current hand is 12 14 20 12
-player 3 discards a 12 to deck 4
-player 3 draws a 20 from deck 3
-player 3 current hand is 12 14 20 20
-player 3 discards a 20 to deck 4
-player 3 draws a 3 from deck 3
-player 3 current hand is 12 14 20 3
-player 3 discards a 12 to deck 4
-player 3 draws a 17 from deck 3
-player 3 current hand is 14 20 3 17
-player 3 discards a 14 to deck 4
-player 3 draws a 4 from deck 3
-player 3 current hand is 20 3 17 4
-player 3 discards a 20 to deck 4
-player 3 draws a 4 from deck 3
-player 3 current hand is 3 17 4 4
-player 3 discards a 4 to deck 4
+player 3 draws a 8 from deck 3
+player 3 current hand is 13 20 18 8
+player 3 discards a 13 to deck 4
+player 3 draws a 1 from deck 3
+player 3 current hand is 20 18 8 1
+player 3 discards a 8 to deck 4
+player 3 draws a 15 from deck 3
+player 3 current hand is 20 18 1 15
+player 3 discards a 1 to deck 4
 player 3 draws a 14 from deck 3
-player 3 current hand is 3 17 4 14
-player 3 discards a 17 to deck 4
-player 3 draws a 13 from deck 3
-player 3 current hand is 3 4 14 13
-player 3 discards a 4 to deck 4
-player 3 draws a 8 from deck 3
-player 3 current hand is 3 14 13 8
-player 3 discards a 8 to deck 4
-player 3 draws a 6 from deck 3
-player 3 current hand is 3 14 13 6
-player 3 discards a 14 to deck 4
-player 3 draws a 19 from deck 3
-player 3 current hand is 3 13 6 19
-player 3 discards a 19 to deck 4
-player 3 draws a 8 from deck 3
-player 3 current hand is 3 13 6 8
-player 3 discards a 8 to deck 4
-player 3 draws a 7 from deck 3
-player 3 current hand is 3 13 6 7
-player 3 discards a 7 to deck 4
-player 3 draws a 20 from deck 3
-player 3 current hand is 3 13 6 20
-player 3 discards a 6 to deck 4
-player 3 draws a 3 from deck 3
-player 3 current hand is 3 13 20 3
+player 3 current hand is 20 18 15 14
 player 3 discards a 20 to deck 4
+player 3 draws a 19 from deck 3
+player 3 current hand is 18 15 14 19
+player 3 discards a 18 to deck 4
 player 3 draws a 7 from deck 3
-player 3 current hand is 3 13 3 7
-player 3 discards a 13 to deck 4
-player 3 draws a 13 from deck 3
-player 3 current hand is 3 3 7 13
-player 3 discards a 13 to deck 4
-player 3 draws a 6 from deck 3
-player 3 current hand is 3 3 7 6
+player 3 current hand is 15 14 19 7
+player 3 discards a 14 to deck 4
+player 3 draws a 8 from deck 3
+player 3 current hand is 15 19 7 8
 player 3 discards a 7 to deck 4
+player 3 draws a 16 from deck 3
+player 3 current hand is 15 19 8 16
+player 3 discards a 16 to deck 4
+player 3 draws a 3 from deck 3
+player 3 current hand is 15 19 8 3
+player 3 discards a 15 to deck 4
+player 3 draws a 16 from deck 3
+player 3 current hand is 19 8 3 16
+player 3 discards a 8 to deck 4
+player 3 draws a 1 from deck 3
+player 3 current hand is 19 3 16 1
+player 3 discards a 19 to deck 4
+player 3 draws a 5 from deck 3
+player 3 current hand is 3 16 1 5
+player 3 discards a 1 to deck 4
+player 3 draws a 12 from deck 3
+player 3 current hand is 3 16 5 12
+player 3 discards a 12 to deck 4
+player 3 draws a 7 from deck 3
+player 3 current hand is 3 16 5 7
+player 3 discards a 5 to deck 4
+player 3 draws a 6 from deck 3
+player 3 current hand is 3 16 7 6
+player 3 discards a 16 to deck 4
+player 3 draws a 14 from deck 3
+player 3 current hand is 3 7 6 14
+player 3 discards a 14 to deck 4
+player 3 draws a 4 from deck 3
+player 3 current hand is 3 7 6 4
+player 3 discards a 6 to deck 4
+player 3 draws a 4 from deck 3
+player 3 current hand is 3 7 4 4
+player 3 discards a 4 to deck 4
+player 3 draws a 20 from deck 3
+player 3 current hand is 3 7 4 20
+player 3 discards a 4 to deck 4
+player 3 draws a 16 from deck 3
+player 3 current hand is 3 7 20 16
+player 3 discards a 16 to deck 4
+player 3 draws a 3 from deck 3
+player 3 current hand is 3 7 20 3
+player 3 discards a 7 to deck 4
+player 3 draws a 17 from deck 3
+player 3 current hand is 3 20 3 17
+player 3 discards a 17 to deck 4
+player 3 draws a 9 from deck 3
+player 3 current hand is 3 20 3 9
+player 3 discards a 9 to deck 4
+player 3 draws a 6 from deck 3
+player 3 current hand is 3 20 3 6
+player 3 discards a 20 to deck 4
 player 3 draws a 15 from deck 3
 player 3 current hand is 3 3 6 15
 player 3 discards a 6 to deck 4
-player 3 draws a 13 from deck 3
-player 3 current hand is 3 3 15 13
-player 3 discards a 13 to deck 4
-player 3 draws a 14 from deck 3
-player 3 current hand is 3 3 15 14
-player 3 discards a 14 to deck 4
-player 3 draws a 5 from deck 3
-player 3 current hand is 3 3 15 5
-player 3 discards a 15 to deck 4
-player 3 draws a 10 from deck 3
-player 3 current hand is 3 3 5 10
-player 3 discards a 5 to deck 4
-player 3 draws a 17 from deck 3
-player 3 current hand is 3 3 10 17
-player 3 discards a 10 to deck 4
-player 3 draws a 11 from deck 3
-player 3 current hand is 3 3 17 11
-player 3 discards a 17 to deck 4
-player 3 draws a 9 from deck 3
-player 3 current hand is 3 3 11 9
-player 3 discards a 9 to deck 4
-player 3 draws a 13 from deck 3
-player 3 current hand is 3 3 11 13
-player 3 discards a 13 to deck 4
-player 3 draws a 16 from deck 3
-player 3 current hand is 3 3 11 16
-player 3 discards a 11 to deck 4
-player 3 draws a 15 from deck 3
-player 3 current hand is 3 3 16 15
-player 3 discards a 16 to deck 4
-player 3 draws a 7 from deck 3
-player 3 current hand is 3 3 15 7
-player 3 discards a 7 to deck 4
-player 3 draws a 19 from deck 3
-player 3 current hand is 3 3 15 19
-player 3 discards a 19 to deck 4
-player 3 draws a 18 from deck 3
-player 3 current hand is 3 3 15 18
-player 3 discards a 18 to deck 4
-player 3 draws a 20 from deck 3
-player 3 current hand is 3 3 15 20
-player 3 discards a 20 to deck 4
-player 3 draws a 5 from deck 3
-player 3 current hand is 3 3 15 5
-player 3 discards a 15 to deck 4
-player 3 draws a 11 from deck 3
-player 3 current hand is 3 3 5 11
-player 3 discards a 5 to deck 4
 player 3 draws a 12 from deck 3
-player 3 current hand is 3 3 11 12
-player 3 discards a 11 to deck 4
-player 3 draws a 6 from deck 3
-player 3 current hand is 3 3 12 6
-player 3 discards a 6 to deck 4
-player 3 draws a 15 from deck 3
-player 3 current hand is 3 3 12 15
+player 3 current hand is 3 3 15 12
 player 3 discards a 15 to deck 4
-player 3 draws a 11 from deck 3
-player 3 current hand is 3 3 12 11
+player 3 draws a 12 from deck 3
+player 3 current hand is 3 3 12 12
 player 3 discards a 12 to deck 4
 player 3 draws a 18 from deck 3
-player 3 current hand is 3 3 11 18
-player 3 discards a 18 to deck 4
-player 3 draws a 16 from deck 3
-player 3 current hand is 3 3 11 16
-player 3 discards a 16 to deck 4
+player 3 current hand is 3 3 12 18
+player 3 discards a 12 to deck 4
+player 3 draws a 13 from deck 3
+player 3 current hand is 3 3 18 13
+player 3 discards a 13 to deck 4
 player 3 draws a 18 from deck 3
-player 3 current hand is 3 3 11 18
-player 3 discards a 11 to deck 4
-player 3 draws a 19 from deck 3
-player 3 current hand is 3 3 18 19
-player 3 discards a 19 to deck 4
+player 3 current hand is 3 3 18 18
+player 3 discards a 18 to deck 4
 player 3 draws a 11 from deck 3
 player 3 current hand is 3 3 18 11
+player 3 discards a 11 to deck 4
+player 3 draws a 16 from deck 3
+player 3 current hand is 3 3 18 16
 player 3 discards a 18 to deck 4
+player 3 draws a 13 from deck 3
+player 3 current hand is 3 3 16 13
+player 3 discards a 13 to deck 4
+player 3 draws a 11 from deck 3
+player 3 current hand is 3 3 16 11
+player 3 discards a 16 to deck 4
+player 3 draws a 9 from deck 3
+player 3 current hand is 3 3 11 9
+player 3 discards a 11 to deck 4
+player 3 draws a 3 from deck 3
+player 3 current hand is 3 3 9 3
+player 3 discards a 9 to deck 4
+player 3 draws a 4 from deck 3
+player 3 current hand is 3 3 3 4
+player 3 discards a 4 to deck 4
+player 3 draws a 5 from deck 3
+player 3 current hand is 3 3 3 5
+player 3 discards a 5 to deck 4
 player 3 draws a 15 from deck 3
-player 3 current hand is 3 3 11 15
-player 5 has informed player 3 that player 5 has won
+player 3 current hand is 3 3 3 15
+player 2 has informed player 3 that player 2 has won
 player 3 has exited.
-player 3 final hand 3 3 11 15
+player 3 final hand 3 3 3 15

@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
+import java.nio.channels.spi.SelectorProvider;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,7 +17,7 @@ public class PackGenerator {
 
         // Ask for input from the player
         System.out.println("File name:");
-        String filename = scanner.next();
+        String filename = scanner.nextLine();
 
         System.out.println("Number of players:");
         int numPlayers = scanner.nextInt();
@@ -46,6 +47,5 @@ public class PackGenerator {
             Files.writeString(file, Integer.toString(card.getValue()) + "\n", StandardOpenOption.APPEND);
             cards.remove(card);
         }
-        System.out.println("hi");
     }
 }
