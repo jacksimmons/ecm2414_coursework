@@ -54,7 +54,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.checkHasWon">
+  <component name="RunManager" selected="JUnit.PlayerTest.getThread">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <method v="2">
@@ -71,11 +71,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.discardCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getThread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="discardCard" />
+      <option name="METHOD_NAME" value="getThread" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,11 +101,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.setOtherPlayers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecm2414_coursework" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlayerTest" />
-      <option name="METHOD_NAME" value="setOtherPlayers" />
+      <option name="METHOD_NAME" value="testRun" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerTest.checkHasWon" />
-        <item itemvalue="JUnit.PlayerTest.setOtherPlayers" />
+        <item itemvalue="JUnit.PlayerTest.getThread" />
+        <item itemvalue="JUnit.PlayerTest.testRun" />
         <item itemvalue="JUnit.PlayerTest.handleWin" />
         <item itemvalue="JUnit.PlayerTest.informPlayers" />
-        <item itemvalue="JUnit.PlayerTest.discardCard" />
+        <item itemvalue="JUnit.PlayerTest.checkHasWon" />
       </list>
     </recent_temporary>
   </component>

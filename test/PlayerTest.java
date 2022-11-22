@@ -1,8 +1,10 @@
 import org.junit.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
 
 public class PlayerTest {
 
@@ -24,15 +26,15 @@ public class PlayerTest {
     }
 
     // Used for testing methods that only need 1 player.
-    Player testPlayer = new Player(1, leftDeck, rightDeck);
+    Player testPlayer = new Player(5, leftDeck, rightDeck);
 
     ArrayList<Thread> threads = new ArrayList<>();
 
-    /**
+    /*
      * Creates and starts threads for all players in the list players.
      * @throws InterruptedException
      */
-    public void setUpThreads() throws InterruptedException {
+    public void setUpThreads() {
 
         // Create a thread for every player
         for(Player player : players) {
@@ -50,26 +52,6 @@ public class PlayerTest {
             thread.start();
             System.out.println(thread);
         }
-
-        // Wait for every thread to complete
-        for (Thread thread : threads)
-        {
-            thread.join();
-        }
-    }
-
-
-    @Test
-    public void testRun() {
-//        ArrayList<Thread> threads = new ArrayList<>();
-//        Thread thread = new Thread(player);
-//        threads.add(thread);
-//        player.setThread(threads);
-//        thread.start();
-//        player.run();
-
-
-
     }
 
     @Test
@@ -79,7 +61,7 @@ public class PlayerTest {
 
     @Test
     public void getName() {
-        assert players.get(0).getName() == "player " + Integer.toString(players.get(0).getId());
+        assert players.get(0).getName() == "player " + (players.get(0).getId());
     }
 
     @Test
@@ -93,11 +75,11 @@ public class PlayerTest {
     }
 
     @Test
-    public void getThread() throws InterruptedException {
-//        PlayerTest test = new PlayerTest();
-//        test.createPlayers();
-//        test.setUpThreads();
-//        System.out.println(test.players.get(0).getThread());
+    public void getThread() {
+        PlayerTest test = new PlayerTest();
+        test.createPlayers();
+        test.setUpThreads();
+        assert test.players.get(1).getThread().size() == numPlayers;
 
     }
 
@@ -111,10 +93,7 @@ public class PlayerTest {
         test.createPlayers();
         for (int i=1; i <= numPlayers; i++)
         {
-            ArrayList<Player> tempOtherPlayers = new ArrayList<>();
-            for (Player player : test.players) {
-                tempOtherPlayers.add(player);
-            }
+            ArrayList<Player> tempOtherPlayers = new ArrayList<>(test.players);
             tempOtherPlayers.remove(i-1);
             test.players.get(i-1).setOtherPlayers(tempOtherPlayers);
 
@@ -132,7 +111,7 @@ public class PlayerTest {
         for (int i=0; i<=3; i++){
             testPlayer.hand.add(cards.get(i));
         }
-        assert testPlayer.checkHasWon() == false;
+        assert !testPlayer.checkHasWon();
 
         // 4 of the same card of the players preferred card therefore the player should win
         cards = new ArrayList<>();
@@ -162,7 +141,7 @@ public class PlayerTest {
     }
     @Test
     public void drawCard() {
-        /**
+        /*
          * First test is to see if the method works in adding a card to a
          * players hand.
          */
@@ -170,7 +149,7 @@ public class PlayerTest {
         testPlayer.drawCard(card);
         assert testPlayer.hand.size() == 1;
         assert testPlayer.hand.get(0).equals(card);
-        /**
+        /*
          * This test is to check whether more than 4 cards can be added to
          * a players hand, as a player can only have 4 cards at one time.
          */
@@ -189,7 +168,7 @@ public class PlayerTest {
 
     @Test
     public void discardCard() throws InterruptedException {
-        /**
+        /*
          * Testing whether the method works with just 1 card.
          */
         Card card = new Card(5);
@@ -198,7 +177,7 @@ public class PlayerTest {
         assert testPlayer.hand.size() == 0;
         assert rightDeck.getHandValues().size() == 1;
 
-        /**
+        /*
          * Trying to remove all 4 cards from the hand whilst there is a preferred card (1) in the hand.
          * Testing to see how the method reacts to trying to remove a preferred card when it's the only
          * card left.
@@ -226,19 +205,55 @@ public class PlayerTest {
 
     }
 
+    /*
+     * This test can be seen working in the /test file with the output files of each player.
+     */
     @Test
     public void informPlayers() {
         PlayerTest test = new PlayerTest();
         test.createPlayers();
-        testPlayer.informPlayers(players);
+
+        for (Player player : test.players) {
+            // Get and set the output file path
+            Path path = Paths.get("test/"  + player.getName() + "_output.txt");
+            player.setOutputFile(path);
+
+            // Generate the output file
+            try {
+                Files.write(path, "".getBytes());
+            }
+            catch (IOException e)
+            {
+                System.out.println("Failed to make output file for " + player.getName());
+            }
+            player.setOutputFile(path);
+        }
+        testPlayer.informPlayers(test.players);
+
     }
 
     @Test
     public void handleWin() throws InterruptedException {
         PlayerTest test = new PlayerTest();
         test.createPlayers();
+        for (Player player : test.players) {
+            // Get and set the output file path
+            Path path = Paths.get("test/"  + player.getName() + "_output.txt");
+            player.setOutputFile(path);
+
+            // Generate the output file
+            try {
+                Files.write(path, "".getBytes());
+            }
+            catch (IOException e)
+            {
+                System.out.println("Failed to make output file for " + player.getName());
+            }
+            player.setOutputFile(path);
+        }
         test.setUpThreads();
-        players.get(1).handleWin();
+        test.players.get(3).handleWin();
+
 
     }
 }
