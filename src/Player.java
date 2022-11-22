@@ -4,14 +4,10 @@ import java.util.Random;
 import java.io.IOException;
 import java.nio.file.*;
 
-public class Player implements Runnable {
+public class Player extends CardHolder implements Runnable {
     /* A class used as a thread in CardGame.
      * This class handles any player input and card dealing after the initial hands are dealt.
      */
-    private ArrayList<Card> hand = new ArrayList<>();
-    private int id;
-    private String name;
-    private Path outputFile;
     private ArrayList<Player> otherPlayers = new ArrayList<>();
 
     private CardDeck left;
@@ -37,13 +33,16 @@ public class Player implements Runnable {
         {
             try {
                 takeTurn();
-                Thread.sleep(100);
+                Random random = new Random();
+                Thread.sleep(random.nextInt(1000));
             }
             catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
         System.out.println(name + " has exited.");
+        outputLine(name + " has exited.");
+        outputLine(name + " final hand" + getStringHandValues());
     }
 
     /* Getters and Setters */
@@ -119,109 +118,86 @@ public class Player implements Runnable {
         if (leftCard != null) {
 
             // Discard to the right
-            Card rightCard = discardCard();
-            right.addCard(rightCard);
+            Card discardedCard = discardCard(right);
+            if (discardedCard != null)
+            {
+                outputLine(name + " discards a " + discardedCard.getValue() + " to " + right.getName());
+            }
 
-            // Add leftCard to the deck
+            // Add leftCard to the deck and output this to the file
             drawCard(leftCard);
+            outputLine(getName() + " draws a " + Integer.toString(leftCard.getValue()) + " from " + left.getName());
+
+            // Output hand to file
+            outputLine(name + " current hand is" + getStringHandValues());
 
             // Output player hand to the console
             System.out.println(getName() + ": " + getHandValues());
+
+            // Output left and right decks to console
+            System.out.println(left.getName() + ": " + left.getHandValues());
+            System.out.println(right.getName() + ": " + right.getHandValues());
 
             // Check if the player has won
             if (checkHasWon()){
                 handleWin();
             };
         }
-
     }
 
     /**
      * Adds the given card to the player's hand
-     * @param drawnCard The given card
+     * @param card The given card
      */
-    public synchronized void drawCard(Card drawnCard)
+    public synchronized void drawCard(Card card)
     {
         if (hand.size() <= 3)
         {
-            hand.add(drawnCard);
-            outputLine(getName() + " draws a " + Integer.toString(drawnCard.getValue()));
+            hand.add(card);
         }
     }
 
     /**
      * Randomly discards and returns a card from the hand
-     * @return The card
+     * @param deck The deck to discard to
+     * @return The Card, if successfully discarded to {@code}deck{@code} or not
      * @throws InterruptedException
      */
-    public synchronized Card discardCard() throws InterruptedException {
-
+    public synchronized Card discardCard(CardDeck deck) throws InterruptedException {
         Card card = null;
         Random random = new Random();
+        ArrayList<Integer> possibleIndices = new ArrayList<>();
 
+        for (int i=0; i < hand.size(); i++)
+        {
+            possibleIndices.add(i);
+        }
+
+        // Randomly select a card from the deck.
         while (hand.size() > 0)
         {
-            int randIndex = random.nextInt(hand.size());
+            int randIndex = random.nextInt(possibleIndices.size());
+            int randValue = possibleIndices.get(randIndex);
 
-            if (hand.get(randIndex).getValue() == getId())
+            // If randValue is the index of a preferred denomination
+            if (hand.get(randValue).getValue() == getId())
             {
-                continue;
+                possibleIndices.remove(randIndex);
             }
             else
             {
-                card = hand.get(randIndex);
+                card = hand.get(randValue);
                 hand.remove(card);
-                return card;
+                break;
             }
         }
 
+        if (card != null)
+        {
+            deck.addCard(card);
+        }
+
         return card;
-    }
-
-    /**
-     * Getter method for the hand
-     * @return The hand
-     */
-    public synchronized ArrayList<Card> getHand()
-    {
-        return hand;
-    }
-
-    /**
-     * Returns the hand as a list storing the values of each card
-     * @return The list of card values
-     */
-    public synchronized ArrayList<Integer> getHandValues()
-    {
-        ArrayList<Integer> handValues = new ArrayList<>();
-        for (int i=0; i < hand.size(); i++)
-        {
-            handValues.add(hand.get(i).getValue());
-        }
-        return handValues;
-    }
-
-    /**
-     * Output File setter method
-     * @param outputFile The path of the output file
-     */
-    public synchronized void setOutputFile(Path outputFile)
-    {
-        this.outputFile = outputFile;
-    }
-
-    /**
-     * Outputs a line to the output file
-     * @param line The line to be written
-     */
-    public synchronized void outputLine(String line)
-    {
-        try {
-            Files.writeString(outputFile, line + "\n", StandardOpenOption.APPEND);
-        } catch (IOException e)
-        {
-            System.out.println("Output to file failed.");
-        }
     }
 
     /**

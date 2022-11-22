@@ -81,13 +81,28 @@ public class CardGame {
         // Populate decks list with empty decks
         for (int i=1; i <= numPlayers; i++)
         {
+            // Create the deck
             CardDeck deck = new CardDeck(i);
             decks.add(deck);
+
+            // Get and set the output file path
+            Path path = Paths.get(deck.getName() + "_output.txt");
+            deck.setOutputFile(path);
+
+            // Generate the output file
+            try {
+                Files.write(path, "".getBytes());
+            }
+            catch (IOException e)
+            {
+                System.out.println("Failed to make output file for " + deck.getName());
+            }
         }
 
         // Create the players and assign them their Left and Right decks (the decks have no cards yet)
         for (int i=1; i <= numPlayers; i++)
         {
+            // Calculate the left and right deck IDs
             int leftNum = i;
             int rightNum = i + 1;
 
@@ -96,13 +111,15 @@ public class CardGame {
                 rightNum = 1;
             }
 
+            // Create the player
             Player player = new Player(i, decks.get(leftNum - 1), decks.get(rightNum - 1));
             players.add(player);
 
+            // Get and set the player output path
             Path path = Paths.get(player.getName() + "_output.txt");
             player.setOutputFile(path);
 
-            // Generate the files here
+            // Generate the output file
             try {
                 Files.write(path, "".getBytes());
             }
@@ -157,7 +174,7 @@ public class CardGame {
             }
             else
             {
-                // Check whether a player has already won from their starting cards
+                // Check whether a player has already won from their starting cards, and output their starting hand
                 if (!checkedPlayers)
                 {
                     for (int i=0; i < numPlayers; i++)
@@ -167,7 +184,8 @@ public class CardGame {
                         if (player.checkHasWon()){
                             player.handleWin();
                         };
-    
+                        
+                        player.outputLine(player.getName() + " initial hand" + player.getStringHandValues());
                         System.out.println(player.getName() + " " + player.getHandValues());
                         System.out.println(player.getLeft().getName() + " " + player.getRight().getName());
                     }
@@ -192,16 +210,14 @@ public class CardGame {
         // Console information regarding cards in each deck
         for (CardDeck deck : decks)
         {
-            System.out.println(deck.getName() + " " + deck.getDeckValues());
+            System.out.println(deck.getName() + " " + deck.getHandValues());
         }
 
-        // Start a thread for every player
+        // Create a thread for every player
         ArrayList<Thread> threads = new ArrayList<>();
         for (Player player : players) {
             Thread thread = new Thread(player);
-            thread.start();
             threads.add(thread);
-            System.out.println(player.getLeft().getDeckValues() + " " + player.getRight().getDeckValues());
         }
 
         // Set the threads variable for every player
@@ -209,10 +225,22 @@ public class CardGame {
             player.setThread(threads);
         }
 
+        // Start all the threads
+        for (Thread thread : threads) {
+            thread.start();
+        }
+
         // Wait for every thread to complete
         for (Thread thread : threads)
         {
             thread.join();
+        }
+
+        // Now finish the game by outputting the final contents of every deck to their corresponding
+        // output files.
+        for (CardDeck deck : decks)
+        {
+            deck.outputLine(deck.getName() + " contents:" + deck.getStringHandValues());
         }
     }
 }
