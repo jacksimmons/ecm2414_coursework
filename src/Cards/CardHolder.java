@@ -12,7 +12,7 @@ public class CardHolder {
     protected String name;
 
     // An ArrayList storing all the cards held by this object
-    protected ArrayList<Card> hand = new ArrayList<>();
+    ArrayList<Card> hand = new ArrayList<>();
 
     protected Path outputFile;
 
