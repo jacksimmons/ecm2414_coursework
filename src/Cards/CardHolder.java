@@ -12,23 +12,11 @@ public class CardHolder {
     protected String name;
 
     // An ArrayList storing all the cards held by this object
-    ArrayList<Card> hand = new ArrayList<>();
+    public ArrayList<Card> hand = new ArrayList<>();
 
-    protected Path outputFile;
+    public Path outputFile;
 
     public CardHolder() {}
-
-    /**
-     * Method to return hand, used for testing purposes.
-     * @return
-     */
-
-    public ArrayList<Card> getHand() {
-        return hand;
-    }
-
-    public void setHand() {
-    }
 
     /**
      * Method to return outputFile, used for testing purposes.

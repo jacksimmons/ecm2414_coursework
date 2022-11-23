@@ -254,18 +254,7 @@ public class TestPlayer {
             }
             player.setOutputFile(path);
         }
-//        ArrayList<Card> cards = new ArrayList<>();
-//        test.players.get(3).hand = new ArrayList<>();
-//        for (int i=1; i<=4; i++){
-//            cards.add(new Card(i));
-//        }
-//        for (int i=0; i<=3; i++){
-//            test.players.get(0).hand.add(cards.get(i));
-//            test.players.get(1).hand.add(cards.get(i));
-//            test.players.get(2).hand.add(cards.get(i));
-//            test.players.get(3).hand.add(cards.get(i));
-//        }
-        System.out.println(test.players.get(3).getHandValues());
+
         test.setUpThreads();
         test.players.get(3).handleWin();
     }
