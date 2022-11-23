@@ -8,3 +8,4 @@ CardGame runs the simulation.
 The test is contained within the TestRunner class.
 Almost every test is completed using asserts, however some tests (those involving CardHolder.outputLine())
 output their result to a file.
+This output is located at Testing/JUnit.

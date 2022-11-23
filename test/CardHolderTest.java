@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -41,10 +42,7 @@ public class CardHolderTest {
     }
 
     @Test
-    public void setOutputFile() {
-    }
-
-    @Test
     public void outputLine() {
+        cardHolder.setOutputFile();
     }
 }
