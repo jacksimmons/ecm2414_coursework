@@ -1,1 +1,0 @@
-deck 7 contents: 2 10 15

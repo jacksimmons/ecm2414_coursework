@@ -1,1 +1,0 @@
-deck 4 contents: 14 6 12 18 18 17
