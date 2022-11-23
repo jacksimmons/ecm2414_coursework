@@ -17,7 +17,25 @@ public class CardHolder {
     protected Path outputFile;
 
     public CardHolder() {}
-    
+
+    /**
+     * Method to return hand, used for testing purposes.
+     * @return
+     */
+
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
+
+    public void setHand() {
+    }
+
+    /**
+     * Method to return outputFile, used for testing purposes.
+     */
+    public Path getOutputFile(){
+        return outputFile;
+    }
     /**
      * Adds a card to the hand.
      * Used when a player adds a card to a hand during their turn and
