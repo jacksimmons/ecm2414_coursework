@@ -72,8 +72,7 @@ public class CardHolder {
     {
         try {
             Files.writeString(outputFile, line + "\n", StandardOpenOption.APPEND);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println("Output to file failed.");
         }
     }
