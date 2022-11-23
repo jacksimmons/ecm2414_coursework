@@ -1,0 +1,1 @@
+deck 8 contents: 12 8 8 20

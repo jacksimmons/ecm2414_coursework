@@ -1,0 +1,115 @@
+player 1 initial hand 6 7 17 7
+player 1 discards a 6 to deck 2
+player 1 draws a 20 from deck 1
+player 1 current hand is 7 17 7 20
+player 1 discards a 7 to deck 2
+player 1 draws a 3 from deck 1
+player 1 current hand is 7 17 20 3
+player 1 discards a 7 to deck 2
+player 1 draws a 18 from deck 1
+player 1 current hand is 17 20 3 18
+player 1 discards a 18 to deck 2
+player 1 draws a 17 from deck 1
+player 1 current hand is 17 20 3 17
+player 1 discards a 17 to deck 2
+player 1 draws a 12 from deck 1
+player 1 current hand is 17 20 3 12
+player 1 discards a 17 to deck 2
+player 1 draws a 6 from deck 1
+player 1 current hand is 20 3 12 6
+player 1 discards a 3 to deck 2
+player 1 draws a 1 from deck 1
+player 1 current hand is 20 12 6 1
+player 1 discards a 12 to deck 2
+player 1 draws a 18 from deck 1
+player 1 current hand is 20 6 1 18
+player 1 discards a 18 to deck 2
+player 1 draws a 11 from deck 1
+player 1 current hand is 20 6 1 11
+player 1 discards a 11 to deck 2
+player 1 draws a 16 from deck 1
+player 1 current hand is 20 6 1 16
+player 1 discards a 20 to deck 2
+player 1 draws a 11 from deck 1
+player 1 current hand is 6 1 16 11
+player 1 discards a 16 to deck 2
+player 1 draws a 15 from deck 1
+player 1 current hand is 6 1 11 15
+player 1 discards a 15 to deck 2
+player 1 draws a 5 from deck 1
+player 1 current hand is 6 1 11 5
+player 1 discards a 11 to deck 2
+player 1 draws a 13 from deck 1
+player 1 current hand is 6 1 5 13
+player 1 discards a 6 to deck 2
+player 1 draws a 7 from deck 1
+player 1 current hand is 1 5 13 7
+player 1 discards a 7 to deck 2
+player 1 draws a 5 from deck 1
+player 1 current hand is 1 5 13 5
+player 1 discards a 13 to deck 2
+player 1 draws a 19 from deck 1
+player 1 current hand is 1 5 5 19
+player 1 discards a 5 to deck 2
+player 1 draws a 14 from deck 1
+player 1 current hand is 1 5 19 14
+player 1 discards a 19 to deck 2
+player 1 draws a 11 from deck 1
+player 1 current hand is 1 5 14 11
+player 1 discards a 14 to deck 2
+player 1 draws a 19 from deck 1
+player 1 current hand is 1 5 11 19
+player 1 discards a 11 to deck 2
+player 1 draws a 2 from deck 1
+player 1 current hand is 1 5 19 2
+player 1 discards a 5 to deck 2
+player 1 draws a 17 from deck 1
+player 1 current hand is 1 19 2 17
+player 1 discards a 2 to deck 2
+player 1 draws a 4 from deck 1
+player 1 current hand is 1 19 17 4
+player 1 discards a 19 to deck 2
+player 1 draws a 12 from deck 1
+player 1 current hand is 1 17 4 12
+player 1 discards a 4 to deck 2
+player 1 draws a 1 from deck 1
+player 1 current hand is 1 17 12 1
+player 1 discards a 17 to deck 2
+player 1 draws a 14 from deck 1
+player 1 current hand is 1 12 1 14
+player 1 discards a 14 to deck 2
+player 1 draws a 4 from deck 1
+player 1 current hand is 1 12 1 4
+player 1 discards a 12 to deck 2
+player 1 draws a 16 from deck 1
+player 1 current hand is 1 1 4 16
+player 1 discards a 4 to deck 2
+player 1 draws a 20 from deck 1
+player 1 current hand is 1 1 16 20
+player 1 discards a 16 to deck 2
+player 1 draws a 18 from deck 1
+player 1 current hand is 1 1 20 18
+player 1 discards a 18 to deck 2
+player 1 draws a 6 from deck 1
+player 1 current hand is 1 1 20 6
+player 1 discards a 6 to deck 2
+player 1 draws a 13 from deck 1
+player 1 current hand is 1 1 20 13
+player 1 discards a 20 to deck 2
+player 1 draws a 2 from deck 1
+player 1 current hand is 1 1 13 2
+player 1 discards a 13 to deck 2
+player 1 draws a 5 from deck 1
+player 1 current hand is 1 1 2 5
+player 1 discards a 2 to deck 2
+player 1 draws a 5 from deck 1
+player 1 current hand is 1 1 5 5
+player 1 discards a 5 to deck 2
+player 1 draws a 3 from deck 1
+player 1 current hand is 1 1 5 3
+player 1 discards a 3 to deck 2
+player 1 draws a 6 from deck 1
+player 1 current hand is 1 1 5 6
+player 9 has informed player 1 that player 9 has won
+player 1 has exited.
+player 1 final hand 1 1 5 6
