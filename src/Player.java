@@ -32,12 +32,13 @@ public class Player extends CardHolder implements Runnable {
                 takeTurn();
                 //Random random = new Random();
                 //Thread.sleep(random.nextInt(1000));
-                Thread.sleep(100);
+                Thread.sleep(1);
             }
             catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
+        
         System.out.println(name + " has exited.");
         outputLine(name + " has exited.");
         outputLine(name + " final hand" + getStringHandValues());
@@ -141,13 +142,13 @@ public class Player extends CardHolder implements Runnable {
             System.out.println(getName() + ": " + getHandValues());
 
             // Output left and right decks to console
-            System.out.println(left.getName() + ": " + left.getHandValues());
-            System.out.println(right.getName() + ": " + right.getHandValues());
+            // System.out.println(left.getName() + ": " + left.getHandValues());
+            // System.out.println(right.getName() + ": " + right.getHandValues());
+        }
 
-            // Check if the player has won
-            if (checkHasWon()){
-                handleWin();
-            }
+        // Check if the player has won
+        if (checkHasWon()){
+            handleWin();
         }
     }
 
@@ -223,7 +224,7 @@ public class Player extends CardHolder implements Runnable {
      * text file, informing other people that they have won and stopping other player's threads,
      * in order to stop the game.
      */
-    public synchronized void handleWin() {
+    public synchronized void handleWin() throws InterruptedException {
         System.out.println(getName() + " wins");
         outputLine(getName() + " wins");
         informPlayers(otherPlayers);

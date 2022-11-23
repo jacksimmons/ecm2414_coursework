@@ -1,1 +1,1 @@
-deck 6 contents: 12 8 12 14
+deck 6 contents: 14 11
