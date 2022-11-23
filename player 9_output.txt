@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 player 9 draws a 9
 player 9 draws a 2
 player 9 draws a 1
@@ -39,3 +40,99 @@ player 9 draws a 1
 player 9 draws a 3
 player 9 draws a 9
 player 9 wins
+=======
+player 9 initial hand 2 18 3 9
+player 9 discards a 3 to deck 10
+player 9 draws a 10 from deck 9
+player 9 current hand is 2 18 9 10
+player 9 discards a 2 to deck 10
+player 9 draws a 7 from deck 9
+player 9 current hand is 18 9 10 7
+player 9 discards a 10 to deck 10
+player 9 draws a 6 from deck 9
+player 9 current hand is 18 9 7 6
+player 9 discards a 18 to deck 10
+player 9 draws a 13 from deck 9
+player 9 current hand is 9 7 6 13
+player 9 discards a 7 to deck 10
+player 9 draws a 10 from deck 9
+player 9 current hand is 9 6 13 10
+player 9 discards a 13 to deck 10
+player 9 draws a 15 from deck 9
+player 9 current hand is 9 6 10 15
+player 9 discards a 6 to deck 10
+player 9 draws a 1 from deck 9
+player 9 current hand is 9 10 15 1
+player 9 discards a 1 to deck 10
+player 9 draws a 16 from deck 9
+player 9 current hand is 9 10 15 16
+player 9 discards a 15 to deck 10
+player 9 draws a 14 from deck 9
+player 9 current hand is 9 10 16 14
+player 9 discards a 14 to deck 10
+player 9 draws a 7 from deck 9
+player 9 current hand is 9 10 16 7
+player 9 discards a 16 to deck 10
+player 9 draws a 20 from deck 9
+player 9 current hand is 9 10 7 20
+player 9 discards a 20 to deck 10
+player 9 draws a 4 from deck 9
+player 9 current hand is 9 10 7 4
+player 9 discards a 7 to deck 10
+player 9 draws a 18 from deck 9
+player 9 current hand is 9 10 4 18
+player 9 discards a 10 to deck 10
+player 9 draws a 11 from deck 9
+player 9 current hand is 9 4 18 11
+player 9 discards a 18 to deck 10
+player 9 draws a 14 from deck 9
+player 9 current hand is 9 4 11 14
+player 9 discards a 11 to deck 10
+player 9 draws a 1 from deck 9
+player 9 current hand is 9 4 14 1
+player 9 discards a 14 to deck 10
+player 9 draws a 18 from deck 9
+player 9 current hand is 9 4 1 18
+player 9 discards a 1 to deck 10
+player 9 draws a 15 from deck 9
+player 9 current hand is 9 4 18 15
+player 9 discards a 18 to deck 10
+player 9 draws a 12 from deck 9
+player 9 current hand is 9 4 15 12
+player 9 discards a 4 to deck 10
+player 9 draws a 17 from deck 9
+player 9 current hand is 9 15 12 17
+player 9 discards a 17 to deck 10
+player 9 draws a 14 from deck 9
+player 9 current hand is 9 15 12 14
+player 9 discards a 15 to deck 10
+player 9 draws a 5 from deck 9
+player 9 current hand is 9 12 14 5
+player 9 discards a 5 to deck 10
+player 9 draws a 4 from deck 9
+player 9 current hand is 9 12 14 4
+player 9 discards a 4 to deck 10
+player 9 draws a 10 from deck 9
+player 9 current hand is 9 12 14 10
+player 9 discards a 12 to deck 10
+player 9 draws a 17 from deck 9
+player 9 current hand is 9 14 10 17
+player 9 discards a 10 to deck 10
+player 9 draws a 17 from deck 9
+player 9 current hand is 9 14 17 17
+player 9 discards a 17 to deck 10
+player 9 draws a 19 from deck 9
+player 9 current hand is 9 14 17 19
+player 9 discards a 14 to deck 10
+player 9 draws a 16 from deck 9
+player 9 current hand is 9 17 19 16
+player 9 discards a 17 to deck 10
+player 9 draws a 13 from deck 9
+player 9 current hand is 9 19 16 13
+player 9 discards a 13 to deck 10
+player 9 draws a 14 from deck 9
+player 9 current hand is 9 19 16 14
+player 8 has informed player 9 that player 8 has won
+player 9 has exited.
+player 9 final hand 9 19 16 14
+>>>>>>> Stashed changes

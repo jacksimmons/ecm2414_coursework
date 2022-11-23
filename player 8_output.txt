@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 player 8 draws a 5
 player 8 draws a 18
 player 8 draws a 18
@@ -39,3 +40,99 @@ player 8 draws a 13
 player 8 draws a 11
 player 8 draws a 20
 player 9 has informed player 8 that player 9 has won
+=======
+player 8 initial hand 8 1 8 10
+player 8 discards a 10 to deck 9
+player 8 draws a 15 from deck 8
+player 8 current hand is 8 1 8 15
+player 8 discards a 15 to deck 9
+player 8 draws a 16 from deck 8
+player 8 current hand is 8 1 8 16
+player 8 discards a 1 to deck 9
+player 8 draws a 14 from deck 8
+player 8 current hand is 8 8 16 14
+player 8 discards a 16 to deck 9
+player 8 draws a 7 from deck 8
+player 8 current hand is 8 8 14 7
+player 8 discards a 14 to deck 9
+player 8 draws a 18 from deck 8
+player 8 current hand is 8 8 7 18
+player 8 discards a 7 to deck 9
+player 8 draws a 20 from deck 8
+player 8 current hand is 8 8 18 20
+player 8 discards a 20 to deck 9
+player 8 draws a 4 from deck 8
+player 8 current hand is 8 8 18 4
+player 8 discards a 4 to deck 9
+player 8 draws a 14 from deck 8
+player 8 current hand is 8 8 18 14
+player 8 discards a 18 to deck 9
+player 8 draws a 11 from deck 8
+player 8 current hand is 8 8 14 11
+player 8 discards a 11 to deck 9
+player 8 draws a 18 from deck 8
+player 8 current hand is 8 8 14 18
+player 8 discards a 14 to deck 9
+player 8 draws a 1 from deck 8
+player 8 current hand is 8 8 18 1
+player 8 discards a 1 to deck 9
+player 8 draws a 12 from deck 8
+player 8 current hand is 8 8 18 12
+player 8 discards a 18 to deck 9
+player 8 draws a 15 from deck 8
+player 8 current hand is 8 8 12 15
+player 8 discards a 15 to deck 9
+player 8 draws a 14 from deck 8
+player 8 current hand is 8 8 12 14
+player 8 discards a 12 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 8 8 14 17
+player 8 discards a 17 to deck 9
+player 8 draws a 5 from deck 8
+player 8 current hand is 8 8 14 5
+player 8 discards a 14 to deck 9
+player 8 draws a 4 from deck 8
+player 8 current hand is 8 8 5 4
+player 8 discards a 5 to deck 9
+player 8 draws a 10 from deck 8
+player 8 current hand is 8 8 4 10
+player 8 discards a 4 to deck 9
+player 8 draws a 19 from deck 8
+player 8 current hand is 8 8 10 19
+player 8 discards a 10 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 8 8 19 17
+player 8 discards a 17 to deck 9
+player 8 draws a 17 from deck 8
+player 8 current hand is 8 8 19 17
+player 8 discards a 17 to deck 9
+player 8 draws a 13 from deck 8
+player 8 current hand is 8 8 19 13
+player 8 discards a 19 to deck 9
+player 8 draws a 16 from deck 8
+player 8 current hand is 8 8 13 16
+player 8 discards a 16 to deck 9
+player 8 draws a 5 from deck 8
+player 8 current hand is 8 8 13 5
+player 8 discards a 13 to deck 9
+player 8 draws a 14 from deck 8
+player 8 current hand is 8 8 5 14
+player 8 discards a 14 to deck 9
+player 8 draws a 20 from deck 8
+player 8 current hand is 8 8 5 20
+player 8 discards a 5 to deck 9
+player 8 draws a 8 from deck 8
+player 8 current hand is 8 8 20 8
+player 8 discards a 20 to deck 9
+player 8 draws a 12 from deck 8
+player 8 current hand is 8 8 8 12
+player 8 discards a 12 to deck 9
+player 8 draws a 4 from deck 8
+player 8 current hand is 8 8 8 4
+player 8 discards a 4 to deck 9
+player 8 draws a 8 from deck 8
+player 8 current hand is 8 8 8 8
+player 8 wins
+player 8 has exited.
+player 8 final hand 8 8 8 8
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 player 6 draws a 2
 player 6 draws a 5
 player 6 draws a 14
@@ -39,3 +40,105 @@ player 6 draws a 16
 player 6 draws a 19
 player 6 draws a 6
 player 9 has informed player 6 that player 9 has won
+=======
+player 6 initial hand 5 1 17 20
+player 6 discards a 5 to deck 7
+player 6 draws a 14 from deck 6
+player 6 current hand is 1 17 20 14
+player 6 discards a 1 to deck 7
+player 6 draws a 12 from deck 6
+player 6 current hand is 17 20 14 12
+player 6 discards a 12 to deck 7
+player 6 draws a 15 from deck 6
+player 6 current hand is 17 20 14 15
+player 6 discards a 15 to deck 7
+player 6 draws a 5 from deck 6
+player 6 current hand is 17 20 14 5
+player 6 discards a 14 to deck 7
+player 6 draws a 4 from deck 6
+player 6 current hand is 17 20 5 4
+player 6 discards a 17 to deck 7
+player 6 draws a 17 from deck 6
+player 6 current hand is 20 5 4 17
+player 6 discards a 17 to deck 7
+player 6 draws a 4 from deck 6
+player 6 current hand is 20 5 4 4
+player 6 discards a 4 to deck 7
+player 6 draws a 17 from deck 6
+player 6 current hand is 20 5 4 17
+player 6 discards a 4 to deck 7
+player 6 draws a 19 from deck 6
+player 6 current hand is 20 5 17 19
+player 6 discards a 19 to deck 7
+player 6 draws a 16 from deck 6
+player 6 current hand is 20 5 17 16
+player 6 discards a 17 to deck 7
+player 6 draws a 12 from deck 6
+player 6 current hand is 20 5 16 12
+player 6 discards a 5 to deck 7
+player 6 draws a 13 from deck 6
+player 6 current hand is 20 16 12 13
+player 6 discards a 13 to deck 7
+player 6 draws a 14 from deck 6
+player 6 current hand is 20 16 12 14
+player 6 discards a 16 to deck 7
+player 6 draws a 8 from deck 6
+player 6 current hand is 20 12 14 8
+player 6 discards a 14 to deck 7
+player 6 draws a 8 from deck 6
+player 6 current hand is 20 12 8 8
+player 6 discards a 20 to deck 7
+player 6 draws a 2 from deck 6
+player 6 current hand is 12 8 8 2
+player 6 discards a 12 to deck 7
+player 6 draws a 3 from deck 6
+player 6 current hand is 8 8 2 3
+player 6 discards a 8 to deck 7
+player 6 draws a 20 from deck 6
+player 6 current hand is 8 2 3 20
+player 6 discards a 3 to deck 7
+player 6 draws a 7 from deck 6
+player 6 current hand is 8 2 20 7
+player 6 discards a 7 to deck 7
+player 6 draws a 6 from deck 6
+player 6 current hand is 8 2 20 6
+player 6 discards a 8 to deck 7
+player 6 draws a 18 from deck 6
+player 6 current hand is 2 20 6 18
+player 6 discards a 2 to deck 7
+player 6 draws a 11 from deck 6
+player 6 current hand is 20 6 18 11
+player 6 discards a 20 to deck 7
+player 6 draws a 11 from deck 6
+player 6 current hand is 6 18 11 11
+player 6 discards a 18 to deck 7
+player 6 draws a 19 from deck 6
+player 6 current hand is 6 11 11 19
+player 6 discards a 11 to deck 7
+player 6 draws a 11 from deck 6
+player 6 current hand is 6 11 19 11
+player 6 discards a 11 to deck 7
+player 6 draws a 6 from deck 6
+player 6 current hand is 6 19 11 6
+player 6 discards a 19 to deck 7
+player 6 draws a 16 from deck 6
+player 6 current hand is 6 11 6 16
+player 6 discards a 16 to deck 7
+player 6 draws a 6 from deck 6
+player 6 current hand is 6 11 6 6
+player 6 discards a 11 to deck 7
+player 6 draws a 13 from deck 6
+player 6 current hand is 6 6 6 13
+player 6 discards a 13 to deck 7
+player 6 draws a 16 from deck 6
+player 6 current hand is 6 6 6 16
+player 6 discards a 16 to deck 7
+player 6 draws a 9 from deck 6
+player 6 current hand is 6 6 6 9
+player 8 has informed player 6 that player 8 has won
+player 6 discards a 9 to deck 7
+player 6 draws a 20 from deck 6
+player 6 current hand is 6 6 6 20
+player 6 has exited.
+player 6 final hand 6 6 6 20
+>>>>>>> Stashed changes
