@@ -80,11 +80,15 @@ public class PlayerTest {
         test.createPlayers();
         test.setUpThreads();
         assert test.players.get(1).getThreads().size() == numPlayers;
-
     }
 
     @Test
     public void setThreads() {
+        PlayerTest test = new PlayerTest();
+        test.createPlayers();
+        test.setUpThreads();
+        testPlayer.setThreads(test.threads);
+        assert testPlayer.getThreads().equals(test.threads);
     }
 
     @Test
@@ -96,7 +100,6 @@ public class PlayerTest {
             ArrayList<Player> tempOtherPlayers = new ArrayList<>(test.players);
             tempOtherPlayers.remove(i-1);
             test.players.get(i-1).setOtherPlayers(tempOtherPlayers);
-
         }
         assert test.players.get(0).getOtherPlayers().size() == numPlayers - 1;
     }
@@ -117,7 +120,7 @@ public class PlayerTest {
         cards = new ArrayList<>();
         testPlayer.hand = new ArrayList<>();
         for (int i=1; i<=4; i++){
-            cards.add(new Card(1));
+            cards.add(new Card(5));
         }
         for (int i=0; i<=3; i++){
             testPlayer.hand.add(cards.get(i));
@@ -125,8 +128,7 @@ public class PlayerTest {
         assert testPlayer.checkHasWon();
 
         // 4 of the same card which is not of the players preferred card. This can happen at the
-        // start of a game. In this case, the player should win.
-
+        // start or (very rarely) during the game. In this case, the player should win.
         cards = new ArrayList<>();
         testPlayer.hand = new ArrayList<>();
         for (int i=1; i<=4; i++){
@@ -136,9 +138,8 @@ public class PlayerTest {
             testPlayer.hand.add(cards.get(i));
         }
         assert testPlayer.checkHasWon();
-
-
     }
+
     @Test
     public void drawCard() {
         /*
@@ -179,7 +180,7 @@ public class PlayerTest {
         assert rightDeck.getHandValues().size() == 1;
 
         /*
-         * Trying to remove all 4 cards from the hand whilst there is a preferred card (1) in the hand.
+         * Trying to remove all 4 cards from the hand whilst there is a preferred card (5) in the hand.
          * Testing to see how the method reacts to trying to remove a preferred card when it's the only
          * card left.
          * It should not throw an error and keep the card in its hand.
@@ -202,8 +203,6 @@ public class PlayerTest {
         assert testPlayer.getHandValues().contains(5);
         assert rightDeck.getHandValues().size() == 3;
         assert !rightDeck.getHandValues().contains(5);
-
-
     }
 
     /*
@@ -253,7 +252,5 @@ public class PlayerTest {
         }
         test.setUpThreads();
         test.players.get(3).handleWin();
-
-
     }
 }
