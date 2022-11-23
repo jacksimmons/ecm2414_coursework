@@ -10,7 +10,7 @@ public class TestCardHolder {
     CardHolder cardHolder = new CardHolder();
 
     @Test
-    public void addCard() {
+    public void testAddCard() {
         Card card = new Card(1);
         cardHolder.addCard(card);
         assert cardHolder.getHandValues().size() == 1;
@@ -18,7 +18,7 @@ public class TestCardHolder {
     }
 
     @Test
-    public void getHandValues() {
+    public void testGetHandValues() {
         /*
         Tests with empty hand
          */
@@ -30,7 +30,7 @@ public class TestCardHolder {
     }
 
     @Test
-    public void getStringHandValues() {
+    public void testGetStringHandValues() {
         cardHolder.addCard(new Card(0));
         cardHolder.addCard(new Card(1));
         cardHolder.addCard(new Card(2));
@@ -40,7 +40,7 @@ public class TestCardHolder {
     }
 
     @Test
-    public void setOutputFile() throws IOException {
+    public void testSetOutputFile() throws IOException {
         Path path = Paths.get("test/CardHolderTest_output.txt");
         Files.write(path, "".getBytes());
         cardHolder.setOutputFile(path);
@@ -50,7 +50,7 @@ public class TestCardHolder {
     }
 
     @Test
-    public void outputLine() throws IOException {
+    public void testOutputLine() throws IOException {
         Path path = Paths.get("test/CardHolderTest_output.txt");
         Files.write(path, "".getBytes());
         cardHolder.setOutputFile(path);

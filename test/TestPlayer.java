@@ -17,7 +17,7 @@ public class TestPlayer {
     ArrayList<Player> players = new ArrayList<>();
 
     // Creates 4 players and adds them to a list of players.
-    public void createPlayers () {
+    public void testcreatePlayers () {
         for (int i=1; i <= numPlayers; i++)
         {
             Player player = new Player(i, leftDeck, rightDeck);
@@ -37,7 +37,7 @@ public class TestPlayer {
      * Creates and starts threads for all players in the list players.
      * @throws InterruptedException
      */
-    public void setUpThreads() {
+    public void testSetUpThreads() {
 
         // Create a thread for every player
         for(Player player : players) {
@@ -58,27 +58,27 @@ public class TestPlayer {
     }
 
     @Test
-    public void getId() {
+    public void testGetId() {
         assert testPlayer.getId() == 5;
     }
 
     @Test
-    public void getName() {
+    public void testGetName() {
         assert testPlayer.getName().equals("player " + testPlayer.getId());
     }
 
     @Test
-    public void getLeft() {
+    public void testGetLeft() {
         assert testPlayer.getLeft().equals(leftDeck);
     }
 
     @Test
-    public void getRight() {
+    public void testGetRight() {
         assert testPlayer.getRight().equals(rightDeck);
     }
 
     @Test
-    public void getThreads() {
+    public void testGetThreads() {
         TestPlayer test = new TestPlayer();
         test.createPlayers();
         test.setUpThreads();
@@ -86,7 +86,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void setThreads() {
+    public void testSetThreads() {
         TestPlayer test = new TestPlayer();
         test.createPlayers();
         test.setUpThreads();
@@ -95,7 +95,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void setOtherPlayers() {
+    public void testSetOtherPlayers() {
         TestPlayer test = new TestPlayer();
         test.createPlayers();
         for (int i=1; i <= numPlayers; i++)
@@ -108,7 +108,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void checkHasWon() {
+    public void testCheckHasWon() {
         // 4 different cards therefore the player should not win
         ArrayList<Card> cards = new ArrayList<>();
         for (int i=1; i<=4; i++){
@@ -144,7 +144,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void drawCard() {
+    public void testDrawCard() {
         /*
          * First test is to see if the method works in adding a card to a
          * players hand.
@@ -171,7 +171,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void discardCard() throws InterruptedException {
+    public void testDiscardCard() throws InterruptedException {
         /*
          * Testing whether the method works with just 1 card.
          */
@@ -212,7 +212,7 @@ public class TestPlayer {
      * This test can be seen working in the /test file with the output files of each player.
      */
     @Test
-    public void informPlayers() {
+    public void testInformPlayers() {
         TestPlayer test = new TestPlayer();
         test.createPlayers();
 
@@ -235,7 +235,7 @@ public class TestPlayer {
     }
 
     @Test
-    public void handleWin() throws InterruptedException{
+    public void testHandleWin() throws InterruptedException{
         TestPlayer test = new TestPlayer();
         test.createPlayers();
         for (Player player : test.players) {

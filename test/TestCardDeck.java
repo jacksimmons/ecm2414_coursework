@@ -14,7 +14,6 @@ public class TestCardDeck {
     public void testPopCard() {
         cardDeck.popCard();
         assert cardDeck.hand.size() == 0;
-
     }
 
     @Test
