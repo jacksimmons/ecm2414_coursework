@@ -20,14 +20,18 @@ public class CardHolder {
 
     /**
      * Method to return hand, used for testing purposes.
-     * @return
+     * @return The hand
      */
-
     public ArrayList<Card> getHand() {
         return hand;
     }
 
-    public void setHand() {
+    /**
+     * Setter for hand
+     * @param hand The hand values (ArrayList of Card)
+     */
+    public void setHand(ArrayList<Card> hand) {
+        this.hand = hand;
     }
 
     /**

@@ -116,30 +116,30 @@ public class TestPlayer {
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.hand.add(cards.get(i));
+            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
         }
         assert !testPlayer.checkHasWon();
 
         // 4 of the same card of the players preferred card therefore the player should win
         cards = new ArrayList<>();
-        testPlayer.hand = new ArrayList<>();
+        testPlayer.setHand(new ArrayList<>());
         for (int i=1; i<=4; i++){
             cards.add(new Card(5));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.hand.add(cards.get(i));
+            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
         }
         assert testPlayer.checkHasWon();
 
         // 4 of the same card which is not of the players preferred card. This can happen at the
         // start or (very rarely) during the game. In this case, the player should win.
         cards = new ArrayList<>();
-        testPlayer.hand = new ArrayList<>();
+        testPlayer.setHand(new ArrayList<>());
         for (int i=1; i<=4; i++){
             cards.add(new Card(2));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.hand.add(cards.get(i));
+            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
         }
         assert testPlayer.checkHasWon();
     }
@@ -152,22 +152,22 @@ public class TestPlayer {
          */
         Card card = new Card(1);
         testPlayer.drawCard(card);
-        assert testPlayer.hand.size() == 1;
-        assert testPlayer.hand.get(0).equals(card);
+        assert testPlayer.getHand().size() == 1;
+        assert testPlayer.getHand().get(0).equals(card);
         /*
          * This test is to check whether more than 4 cards can be added to
          * a players hand, as a player can only have 4 cards at one time.
          */
-        testPlayer.hand = new ArrayList<>();
+        testPlayer.setHand(new ArrayList<>());
         ArrayList<Card> cards = new ArrayList<>();
         for (int i=1; i<=4; i++){
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.hand.add(cards.get(i));
+            testPlayer.getHand().add(cards.get(i));
         }
         testPlayer.drawCard(card);
-        assert !(testPlayer.hand.size() > 4);
+        assert !(testPlayer.getHand().size() > 4);
 
     }
 
@@ -177,10 +177,10 @@ public class TestPlayer {
          * Testing whether the method works with just 1 card.
          */
         Card card = new Card(1);
-        testPlayer.hand.add(card);
+        testPlayer.setHand(testPlayer.getHand().add(card));
         testPlayer.discardCard(rightDeck);
         System.out.println(testPlayer.getHandValues());
-        assert testPlayer.hand.size() == 0;
+        assert testPlayer.getHand().size() == 0;
         assert rightDeck.getHandValues().size() == 1;
 
         /*
@@ -196,14 +196,14 @@ public class TestPlayer {
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.hand.add(cards.get(i));
+            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
         }
 
         testPlayer.discardCard(rightDeck);
         testPlayer.discardCard(rightDeck);
         testPlayer.discardCard(rightDeck);
         testPlayer.discardCard(rightDeck);
-        assert testPlayer.hand.size() > 0;
+        assert testPlayer.getHand().size() > 0;
         assert testPlayer.getHandValues().contains(5);
         assert rightDeck.getHandValues().size() == 3;
         assert !rightDeck.getHandValues().contains(5);
@@ -255,7 +255,7 @@ public class TestPlayer {
             player.setOutputFile(path);
         }
 //        ArrayList<Card> cards = new ArrayList<>();
-//        test.players.get(3).hand = new ArrayList<>();
+//        test.players.get(3).setHand(new ArrayList<>());
 //        for (int i=1; i<=4; i++){
 //            cards.add(new Card(i));
 //        }
