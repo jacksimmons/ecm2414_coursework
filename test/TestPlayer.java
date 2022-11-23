@@ -17,7 +17,7 @@ public class TestPlayer {
     ArrayList<Player> players = new ArrayList<>();
 
     // Creates 4 players and adds them to a list of players.
-    public void testcreatePlayers () {
+    public void createPlayers () {
         for (int i=1; i <= numPlayers; i++)
         {
             Player player = new Player(i, leftDeck, rightDeck);
@@ -37,7 +37,7 @@ public class TestPlayer {
      * Creates and starts threads for all players in the list players.
      * @throws InterruptedException
      */
-    public void testSetUpThreads() {
+    public void setUpThreads() {
 
         // Create a thread for every player
         for(Player player : players) {
@@ -253,6 +253,18 @@ public class TestPlayer {
             }
             player.setOutputFile(path);
         }
+//        ArrayList<Card> cards = new ArrayList<>();
+//        test.players.get(3).hand = new ArrayList<>();
+//        for (int i=1; i<=4; i++){
+//            cards.add(new Card(i));
+//        }
+//        for (int i=0; i<=3; i++){
+//            test.players.get(0).hand.add(cards.get(i));
+//            test.players.get(1).hand.add(cards.get(i));
+//            test.players.get(2).hand.add(cards.get(i));
+//            test.players.get(3).hand.add(cards.get(i));
+//        }
+        System.out.println(test.players.get(3).getHandValues());
         test.setUpThreads();
         test.players.get(3).handleWin();
     }
