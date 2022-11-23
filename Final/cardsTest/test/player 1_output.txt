@@ -1,0 +1,2 @@
+player 1 has exited.
+player 1 final hand

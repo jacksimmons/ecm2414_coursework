@@ -1,1 +1,1 @@
-deck 7 contents: 1 14 17 7
+deck 7 contents: 12 7 10 9
