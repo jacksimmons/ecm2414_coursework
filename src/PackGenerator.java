@@ -1,9 +1,7 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
-import java.nio.channels.spi.SelectorProvider;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,7 +12,7 @@ import java.nio.file.StandardOpenOption;
  * provided.
  */
 public class PackGenerator {
-    public static void main(String[] args) throws FileNotFoundException, IOException
+    public static void main(String[] args) throws IOException
     {
         // Create a scanner object
         Scanner scanner = new Scanner(System.in);
@@ -33,7 +31,7 @@ public class PackGenerator {
         Files.write(file, "".getBytes());
         
         // All cards arraylist
-        ArrayList<Card> cards = new ArrayList<Card>();
+        ArrayList<Card> cards = new ArrayList<>();
         
         for (int i=0; i < 8 * numPlayers; i++)
         {

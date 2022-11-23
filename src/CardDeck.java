@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * This class creates a card deck that holds cards and can be
@@ -29,8 +28,7 @@ public class CardDeck extends CardHolder {
     public synchronized Card popCard()
     {
         if (hand.size() > 0) {
-            Card card = hand.remove(hand.size() - 1);
-            return card;
+            return hand.remove(hand.size() - 1);
         } else {
             return null;
         }

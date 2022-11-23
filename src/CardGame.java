@@ -53,7 +53,7 @@ public class CardGame {
             // display an error message to console.
             try {
                 List<String> lines = Files.readAllLines(Paths.get(path));
-                cards = new ArrayList<Card>();
+                cards = new ArrayList<>();
 
                 // Convert every line in the file into a card
                 while (lines.size() > 0)
@@ -75,10 +75,8 @@ public class CardGame {
 
             } catch (IOException e) {
                 System.out.println("Couldn't open pack file.");
-                continue;
             } catch (NumberFormatException e) {
                 System.out.println("Couldn't read pack file: it has a non-integer value in it.");
-                continue;
             }
         }
 
@@ -199,7 +197,7 @@ public class CardGame {
                             player.setThreads(threads);
                             player.handleWin();
                             return;
-                        };
+                        }
                         
                         player.outputLine(player.getName() + " initial hand" + player.getStringHandValues());
                         System.out.println(player.getName() + " " + player.getHandValues());

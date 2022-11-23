@@ -1,17 +1,13 @@
 import org.junit.Test;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
-
 public class CardHolderTest {
     CardHolder cardHolder = new CardHolder();
-    CardDeck leftDeck = new CardDeck(1);
-    CardDeck rightDeck = new CardDeck(2);
-    Player testPlayer = new Player(1,leftDeck,rightDeck);
 
     @Test
     public void addCard() {
@@ -44,7 +40,7 @@ public class CardHolderTest {
     }
 
     @Test
-    public void setOutputFile() {
+    public void setOutputFile() throws IOException {
         Path path = Paths.get("test/CardHolderTest_output.txt");
         Files.write(path, "".getBytes());
         cardHolder.setOutputFile(path);
@@ -54,7 +50,7 @@ public class CardHolderTest {
     }
 
     @Test
-    public void outputLine() {
+    public void outputLine() throws IOException {
         Path path = Paths.get("test/CardHolderTest_output.txt");
         Files.write(path, "".getBytes());
         cardHolder.setOutputFile(path);

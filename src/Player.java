@@ -1,8 +1,5 @@
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Random;
-import java.io.IOException;
-import java.nio.file.*;
 
 /** A class used as a thread in CardGame.
  * This class handles any player input and card dealing after the initial hands are dealt.
@@ -10,14 +7,14 @@ import java.nio.file.*;
 public class Player extends CardHolder implements Runnable {
     private ArrayList<Player> otherPlayers = new ArrayList<>();
 
-    private CardDeck left;
-    private CardDeck right;
+    private final CardDeck left;
+    private final CardDeck right;
     private ArrayList<Thread> threads = new ArrayList<>();
 
     public Player(int id, CardDeck left, CardDeck right)
     {
         this.id = id;
-        this.name = "player " + Integer.toString(id);
+        this.name = "player " + id;
         this.left = left;
         this.right = right;
     }
@@ -88,7 +85,7 @@ public class Player extends CardHolder implements Runnable {
 
     /**
      * A method to check if the player has won, called at the end of every turn.
-     * @return Whether or not the player has won
+     * @return Whether the player has won
      */
     public synchronized boolean checkHasWon() {
 
@@ -116,7 +113,7 @@ public class Player extends CardHolder implements Runnable {
      * Method to handle every player turn.
      * An atomic action - before this method, player has 4 cards;
      * after this method, they still have 4.
-     * @throws InterruptedException
+     * @throws InterruptedException because handleWin throws this
      */
     private synchronized void takeTurn() throws InterruptedException
     {
@@ -135,7 +132,7 @@ public class Player extends CardHolder implements Runnable {
 
             // Add leftCard to the deck and output this to the file
             drawCard(leftCard);
-            outputLine(getName() + " draws a " + Integer.toString(leftCard.getValue()) + " from " + left.getName());
+            outputLine(getName() + " draws a " + leftCard.getValue() + " from " + left.getName());
 
             // Output hand to file
             outputLine(name + " current hand is" + getStringHandValues());
@@ -150,7 +147,7 @@ public class Player extends CardHolder implements Runnable {
             // Check if the player has won
             if (checkHasWon()){
                 handleWin();
-            };
+            }
         }
     }
 
@@ -170,9 +167,8 @@ public class Player extends CardHolder implements Runnable {
      * Randomly discards and returns a card from the hand
      * @param deck The deck to discard to
      * @return The Card, if successfully discarded to {@code}deck{@code} or not
-     * @throws InterruptedException
      */
-    public synchronized Card discardCard(CardDeck deck) throws InterruptedException {
+    public synchronized Card discardCard(CardDeck deck) {
         Card card = null;
         Random random = new Random();
         ArrayList<Integer> possibleIndices = new ArrayList<>();
@@ -215,11 +211,8 @@ public class Player extends CardHolder implements Runnable {
      */
     public synchronized void informPlayers(ArrayList<Player> players)
     {
-        for (int i=0; i < players.size(); i++)
-        {
-            Player player = players.get(i);
-            if (!player.equals(this))
-            {
+        for (Player player : players) {
+            if (!player.equals(this)) {
                 player.outputLine(getName() + " has informed " + player.getName() + " that " + getName() + " has won");
             }
         }
@@ -229,9 +222,8 @@ public class Player extends CardHolder implements Runnable {
      * This method is called once a player wins. It handles outputting to their
      * text file, informing other people that they have won and stopping other player's threads,
      * in order to stop the game.
-     * @throws InterruptedException
      */
-    public synchronized void handleWin() throws InterruptedException {
+    public synchronized void handleWin() {
         System.out.println(getName() + " wins");
         outputLine(getName() + " wins");
         informPlayers(otherPlayers);

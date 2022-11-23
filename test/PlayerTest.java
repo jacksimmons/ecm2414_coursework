@@ -61,7 +61,7 @@ public class PlayerTest {
 
     @Test
     public void getName() {
-        assert testPlayer.getName().equals("player " + Integer.toString(testPlayer.getId()));
+        assert testPlayer.getName().equals("player " + testPlayer.getId());
     }
 
     @Test
@@ -167,7 +167,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void discardCard() throws InterruptedException {
+    public void discardCard() {
         /*
          * Testing whether the method works with just 1 card.
          */
@@ -233,7 +233,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void handleWin() throws InterruptedException {
+    public void handleWin() {
         PlayerTest test = new PlayerTest();
         test.createPlayers();
         for (Player player : test.players) {

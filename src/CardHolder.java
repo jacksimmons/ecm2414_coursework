@@ -20,7 +20,7 @@ public class CardHolder {
      * Adds a card to the hand.
      * Used when a player adds a card to a hand during their turn and
      * at the start of the game when dealing out cards.
-     * @param drawnCard
+     * @param drawnCard card that is drawn
      */
     public synchronized void addCard(Card drawnCard)
     {
@@ -35,9 +35,8 @@ public class CardHolder {
     public synchronized ArrayList<Integer> getHandValues()
     {
         ArrayList<Integer> handValues = new ArrayList<>();
-        for (int i=0; i < hand.size(); i++)
-        {
-            handValues.add(hand.get(i).getValue());
+        for (Card card : hand) {
+            handValues.add(card.getValue());
         }
         return handValues;
     }
@@ -50,9 +49,8 @@ public class CardHolder {
     {
         ArrayList<Integer> handValues = getHandValues();
         String strHandValues = "";
-        for (int j=0; j < handValues.size(); j++)
-        {
-            strHandValues += " " + handValues.get(j);
+        for (Integer handValue : handValues) {
+            strHandValues += " " + handValue;
         }
         return strHandValues;
     }
