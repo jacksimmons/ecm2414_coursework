@@ -1,6 +1,8 @@
 import org.junit.Test;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -43,11 +45,19 @@ public class CardHolderTest {
 
     @Test
     public void setOutputFile() {
-        
+        Path path = Paths.get("test/CardHolderTest_output.txt");
+        Files.write(path, "".getBytes());
+        cardHolder.setOutputFile(path);
+
+        Files.write(cardHolder.outputFile, "Output 0".getBytes());
+        assert cardHolder.outputFile.equals(path);
     }
 
     @Test
     public void outputLine() {
-        cardHolder.setOutputFile();
+        Path path = Paths.get("test/CardHolderTest_output.txt");
+        Files.write(path, "".getBytes());
+        cardHolder.setOutputFile(path);
+        cardHolder.outputLine("Output 1");
     }
 }
