@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9a82575-9e89-4058-aacd-50bc9ffd43fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ecm2414_coursework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecm2414_coursework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cards.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardDeck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardDeck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/CardHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/PackGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/PackGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/Cards/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Boundary 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Boundary 2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Erroneous 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Erroneous 1.txt.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Erroneous 2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/10 player input files/Normal 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Boundary 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Boundary 2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Erroneous 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Erroneous 1.txt.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Erroneous 2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Erroneous 2.txt.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/4 player input files/Normal 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/JunitTestSuite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/TestCardDeck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/TestCardHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/TestPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/TestRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/player 1_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/player 2_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/player 3_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final/cardsTest/test/player 4_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/junit-4.13.2.jar" beforeDir="false" />
-    </list>
+    <list default="true" id="b9a82575-9e89-4058-aacd-50bc9ffd43fb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,19 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2HxQpSIzkkeJ9hdAiQMHrx2O6l7" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/sack-/Documents/Programming/ecm2414_coursework",
+    "last_opened_file_path": "C:/Users/rosss/Documents/GitHub/ecm2414_coursework/cards.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -98,29 +49,11 @@
       <list>
         <item itemvalue="Application.TestRunner" />
         <item itemvalue="JUnit.TestPlayer" />
+        <item itemvalue="JUnit.TestPlayer (1)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="b9a82575-9e89-4058-aacd-50bc9ffd43fb" name="Changes" comment="" />
-      <created>1669224438654</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1669224438654</updated>
-    </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
