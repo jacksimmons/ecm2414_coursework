@@ -6,9 +6,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class PlayerTest {
+public class TestPlayer {
 
-    public PlayerTest() {
+    public TestPlayer() {
 
     }
     int numPlayers = 4;
@@ -22,6 +22,9 @@ public class PlayerTest {
         {
             Player player = new Player(i, leftDeck, rightDeck);
             players.add(player);
+        }
+        for (Player player: players) {
+            player.setOtherPlayers(players);
         }
     }
 
@@ -76,7 +79,7 @@ public class PlayerTest {
 
     @Test
     public void getThreads() {
-        PlayerTest test = new PlayerTest();
+        TestPlayer test = new TestPlayer();
         test.createPlayers();
         test.setUpThreads();
         assert test.players.get(1).getThreads().size() == numPlayers;
@@ -84,7 +87,7 @@ public class PlayerTest {
 
     @Test
     public void setThreads() {
-        PlayerTest test = new PlayerTest();
+        TestPlayer test = new TestPlayer();
         test.createPlayers();
         test.setUpThreads();
         testPlayer.setThreads(test.threads);
@@ -93,7 +96,7 @@ public class PlayerTest {
 
     @Test
     public void setOtherPlayers() {
-        PlayerTest test = new PlayerTest();
+        TestPlayer test = new TestPlayer();
         test.createPlayers();
         for (int i=1; i <= numPlayers; i++)
         {
@@ -168,7 +171,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void discardCard() {
+    public void discardCard() throws InterruptedException {
         /*
          * Testing whether the method works with just 1 card.
          */
@@ -210,7 +213,7 @@ public class PlayerTest {
      */
     @Test
     public void informPlayers() {
-        PlayerTest test = new PlayerTest();
+        TestPlayer test = new TestPlayer();
         test.createPlayers();
 
         for (Player player : test.players) {
@@ -232,8 +235,8 @@ public class PlayerTest {
     }
 
     @Test
-    public void handleWin() {
-        PlayerTest test = new PlayerTest();
+    public void handleWin() throws InterruptedException{
+        TestPlayer test = new TestPlayer();
         test.createPlayers();
         for (Player player : test.players) {
             // Get and set the output file path

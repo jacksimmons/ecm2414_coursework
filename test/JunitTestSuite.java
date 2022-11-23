@@ -4,9 +4,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        PlayerTest.class,
-        CardDeckTest.class,
-        CardHolderTest.class
+        TestPlayer.class,
+        TestCardDeck.class,
+        TestCardHolder.class
 })
 
 public class JunitTestSuite {

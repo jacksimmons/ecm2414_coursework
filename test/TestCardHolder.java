@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class CardHolderTest {
+public class TestCardHolder {
     CardHolder cardHolder = new CardHolder();
 
     @Test

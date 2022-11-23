@@ -1,7 +1,7 @@
 import org.junit.Test;
 import java.util.ArrayList;
 
-public class CardDeckTest {
+public class TestCardDeck {
     CardDeck cardDeck = new CardDeck(1);
     Card newCard = new Card(5);
     @Test
