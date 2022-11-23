@@ -116,7 +116,9 @@ public class TestPlayer {
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
+            ArrayList<Card> hand = testPlayer.getHand();
+            hand.add(cards.get(i));
+            testPlayer.setHand(hand);
         }
         assert !testPlayer.checkHasWon();
 
@@ -127,7 +129,9 @@ public class TestPlayer {
             cards.add(new Card(5));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
+            ArrayList<Card> hand = testPlayer.getHand();
+            hand.add(cards.get(i));
+            testPlayer.setHand(hand);
         }
         assert testPlayer.checkHasWon();
 
@@ -139,7 +143,9 @@ public class TestPlayer {
             cards.add(new Card(2));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
+            ArrayList<Card> hand = testPlayer.getHand();
+            hand.add(cards.get(i));
+            testPlayer.setHand(hand);
         }
         assert testPlayer.checkHasWon();
     }
@@ -164,7 +170,9 @@ public class TestPlayer {
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.getHand().add(cards.get(i));
+            ArrayList<Card> hand = testPlayer.getHand();
+            hand.add(cards.get(i));
+            testPlayer.setHand(hand);
         }
         testPlayer.drawCard(card);
         assert !(testPlayer.getHand().size() > 4);
@@ -177,7 +185,10 @@ public class TestPlayer {
          * Testing whether the method works with just 1 card.
          */
         Card card = new Card(1);
-        testPlayer.setHand(testPlayer.getHand().add(card));
+        ArrayList<Card> hand = testPlayer.getHand();
+        hand.add(card);
+        testPlayer.setHand(hand);
+
         testPlayer.discardCard(rightDeck);
         System.out.println(testPlayer.getHandValues());
         assert testPlayer.getHand().size() == 0;
@@ -196,7 +207,9 @@ public class TestPlayer {
             cards.add(new Card(i));
         }
         for (int i=0; i<=3; i++){
-            testPlayer.setHand(testPlayer.getHand().add(cards.get(i)));
+            hand = testPlayer.getHand();
+            hand.add(cards.get(i));
+            testPlayer.setHand(hand);
         }
 
         testPlayer.discardCard(rightDeck);
