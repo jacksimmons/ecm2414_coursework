@@ -1,2 +1,0 @@
-player 5 has informed player 2 that player 5 has won
-player 2 final hand
